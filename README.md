@@ -1,0 +1,1 @@
+http://stackoverflow.com/questions/26146668/ios8-1-simulator-always-uses-us-keyboard-layout-despite-german-hardware-keyboard
