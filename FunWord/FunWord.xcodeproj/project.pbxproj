@@ -7,10 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25522B26EA6AEC6F4A05FAA4 /* libPods-FunWord.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A64BDF7003DDBCB686607B71 /* libPods-FunWord.a */; };
+		840136CA1A5300DE00CD5635 /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 840136C91A5300DE00CD5635 /* libz.1.dylib */; };
+		840136CE1A5301B600CD5635 /* FWFirstVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 840136CD1A5301B600CD5635 /* FWFirstVC.m */; };
+		840136D11A5301D300CD5635 /* FWSecondVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 840136D01A5301D300CD5635 /* FWSecondVC.m */; };
+		840136D41A5301E400CD5635 /* FWThirdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 840136D31A5301E400CD5635 /* FWThirdVC.m */; };
+		840136D71A53021900CD5635 /* FWFouthVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 840136D61A53021900CD5635 /* FWFouthVC.m */; };
+		840136DB1A53037700CD5635 /* FirstN@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 840136D91A53037700CD5635 /* FirstN@2x.png */; };
+		840136DC1A53037700CD5635 /* FirstS@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 840136DA1A53037700CD5635 /* FirstS@2x.png */; };
 		84F23BB61A466CC90084F122 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F23BB51A466CC90084F122 /* main.m */; };
 		84F23BB91A466CC90084F122 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F23BB81A466CC90084F122 /* AppDelegate.m */; };
-		84F23BBC1A466CC90084F122 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F23BBB1A466CC90084F122 /* ViewController.m */; };
-		84F23BBF1A466CC90084F122 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F23BBD1A466CC90084F122 /* Main.storyboard */; };
 		84F23BC11A466CC90084F122 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84F23BC01A466CC90084F122 /* Images.xcassets */; };
 		84F23BC41A466CC90084F122 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F23BC21A466CC90084F122 /* LaunchScreen.xib */; };
 		84F23BD01A466CC90084F122 /* FunWordTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F23BCF1A466CC90084F122 /* FunWordTests.m */; };
@@ -50,14 +56,25 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		201D0E9A244D85177962D227 /* Pods-FunWord.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunWord.release.xcconfig"; path = "Pods/Target Support Files/Pods-FunWord/Pods-FunWord.release.xcconfig"; sourceTree = "<group>"; };
+		60B180F0B3BCB450C6EED938 /* Pods-FunWord.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunWord.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FunWord/Pods-FunWord.debug.xcconfig"; sourceTree = "<group>"; };
+		840136C81A52FFBD00CD5635 /* FunWord-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FunWord-Prefix.pch"; sourceTree = "<group>"; };
+		840136C91A5300DE00CD5635 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = usr/lib/libz.1.dylib; sourceTree = SDKROOT; };
+		840136CC1A5301B600CD5635 /* FWFirstVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWFirstVC.h; sourceTree = "<group>"; };
+		840136CD1A5301B600CD5635 /* FWFirstVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWFirstVC.m; sourceTree = "<group>"; };
+		840136CF1A5301D300CD5635 /* FWSecondVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWSecondVC.h; sourceTree = "<group>"; };
+		840136D01A5301D300CD5635 /* FWSecondVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWSecondVC.m; sourceTree = "<group>"; };
+		840136D21A5301E400CD5635 /* FWThirdVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWThirdVC.h; sourceTree = "<group>"; };
+		840136D31A5301E400CD5635 /* FWThirdVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWThirdVC.m; sourceTree = "<group>"; };
+		840136D51A53021900CD5635 /* FWFouthVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWFouthVC.h; sourceTree = "<group>"; };
+		840136D61A53021900CD5635 /* FWFouthVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWFouthVC.m; sourceTree = "<group>"; };
+		840136D91A53037700CD5635 /* FirstN@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FirstN@2x.png"; sourceTree = "<group>"; };
+		840136DA1A53037700CD5635 /* FirstS@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FirstS@2x.png"; sourceTree = "<group>"; };
 		84F23BB01A466CC90084F122 /* FunWord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FunWord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84F23BB41A466CC90084F122 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84F23BB51A466CC90084F122 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		84F23BB71A466CC90084F122 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		84F23BB81A466CC90084F122 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		84F23BBA1A466CC90084F122 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		84F23BBB1A466CC90084F122 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		84F23BBE1A466CC90084F122 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84F23BC01A466CC90084F122 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		84F23BC31A466CC90084F122 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		84F23BC91A466CC90084F122 /* FunWordTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FunWordTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +84,7 @@
 		84F23BE01A466CED0084F122 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84F23BE11A466CED0084F122 /* KeyboardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyboardViewController.h; sourceTree = "<group>"; };
 		84F23BE21A466CED0084F122 /* KeyboardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyboardViewController.m; sourceTree = "<group>"; };
+		A64BDF7003DDBCB686607B71 /* libPods-FunWord.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FunWord.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +92,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				840136CA1A5300DE00CD5635 /* libz.1.dylib in Frameworks */,
+				25522B26EA6AEC6F4A05FAA4 /* libPods-FunWord.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +114,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5735811EE13D595099C9DCC3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				60B180F0B3BCB450C6EED938 /* Pods-FunWord.debug.xcconfig */,
+				201D0E9A244D85177962D227 /* Pods-FunWord.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		840136CB1A53018A00CD5635 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				840136CC1A5301B600CD5635 /* FWFirstVC.h */,
+				840136CD1A5301B600CD5635 /* FWFirstVC.m */,
+				840136CF1A5301D300CD5635 /* FWSecondVC.h */,
+				840136D01A5301D300CD5635 /* FWSecondVC.m */,
+				840136D21A5301E400CD5635 /* FWThirdVC.h */,
+				840136D31A5301E400CD5635 /* FWThirdVC.m */,
+				840136D51A53021900CD5635 /* FWFouthVC.h */,
+				840136D61A53021900CD5635 /* FWFouthVC.m */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		840136D81A53037700CD5635 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				840136D91A53037700CD5635 /* FirstN@2x.png */,
+				840136DA1A53037700CD5635 /* FirstS@2x.png */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		84F23BA71A466CC90084F122 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +154,8 @@
 				84F23BCC1A466CC90084F122 /* FunWordTests */,
 				84F23BDE1A466CED0084F122 /* FunWordKeyboard */,
 				84F23BB11A466CC90084F122 /* Products */,
+				5735811EE13D595099C9DCC3 /* Pods */,
+				B8C1F221FA0DFF4F582E5FC0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,11 +172,10 @@
 		84F23BB21A466CC90084F122 /* FunWord */ = {
 			isa = PBXGroup;
 			children = (
+				840136D81A53037700CD5635 /* Resource */,
+				840136CB1A53018A00CD5635 /* Source */,
 				84F23BB71A466CC90084F122 /* AppDelegate.h */,
 				84F23BB81A466CC90084F122 /* AppDelegate.m */,
-				84F23BBA1A466CC90084F122 /* ViewController.h */,
-				84F23BBB1A466CC90084F122 /* ViewController.m */,
-				84F23BBD1A466CC90084F122 /* Main.storyboard */,
 				84F23BC01A466CC90084F122 /* Images.xcassets */,
 				84F23BC21A466CC90084F122 /* LaunchScreen.xib */,
 				84F23BB31A466CC90084F122 /* Supporting Files */,
@@ -132,6 +186,7 @@
 		84F23BB31A466CC90084F122 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				840136C81A52FFBD00CD5635 /* FunWord-Prefix.pch */,
 				84F23BB41A466CC90084F122 /* Info.plist */,
 				84F23BB51A466CC90084F122 /* main.m */,
 			);
@@ -173,6 +228,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B8C1F221FA0DFF4F582E5FC0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				840136C91A5300DE00CD5635 /* libz.1.dylib */,
+				A64BDF7003DDBCB686607B71 /* libPods-FunWord.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -180,10 +244,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84F23BD31A466CC90084F122 /* Build configuration list for PBXNativeTarget "FunWord" */;
 			buildPhases = (
+				4BB6739D31C6A831DE721F71 /* Check Pods Manifest.lock */,
 				84F23BAC1A466CC90084F122 /* Sources */,
 				84F23BAD1A466CC90084F122 /* Frameworks */,
 				84F23BAE1A466CC90084F122 /* Resources */,
 				84F23BEA1A466CED0084F122 /* Embed App Extensions */,
+				B4A042E5D9CC20E51668361D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -276,9 +342,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84F23BBF1A466CC90084F122 /* Main.storyboard in Resources */,
 				84F23BC41A466CC90084F122 /* LaunchScreen.xib in Resources */,
+				840136DC1A53037700CD5635 /* FirstS@2x.png in Resources */,
 				84F23BC11A466CC90084F122 /* Images.xcassets in Resources */,
+				840136DB1A53037700CD5635 /* FirstN@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,13 +365,49 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4BB6739D31C6A831DE721F71 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B4A042E5D9CC20E51668361D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FunWord/Pods-FunWord-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		84F23BAC1A466CC90084F122 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84F23BBC1A466CC90084F122 /* ViewController.m in Sources */,
+				840136D71A53021900CD5635 /* FWFouthVC.m in Sources */,
 				84F23BB91A466CC90084F122 /* AppDelegate.m in Sources */,
+				840136D41A5301E400CD5635 /* FWThirdVC.m in Sources */,
+				840136D11A5301D300CD5635 /* FWSecondVC.m in Sources */,
+				840136CE1A5301B600CD5635 /* FWFirstVC.m in Sources */,
 				84F23BB61A466CC90084F122 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,14 +444,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		84F23BBD1A466CC90084F122 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				84F23BBE1A466CC90084F122 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		84F23BC21A466CC90084F122 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -438,8 +533,10 @@
 		};
 		84F23BD41A466CC90084F122 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60B180F0B3BCB450C6EED938 /* Pods-FunWord.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "FunWord/FunWord-Prefix.pch";
 				INFOPLIST_FILE = FunWord/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -449,8 +546,10 @@
 		};
 		84F23BD51A466CC90084F122 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 201D0E9A244D85177962D227 /* Pods-FunWord.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "FunWord/FunWord-Prefix.pch";
 				INFOPLIST_FILE = FunWord/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -7,43 +7,10 @@
 //
 
 #import "AppDelegate.h"
-
-
-#if TARGET_IPHONE_SIMULATOR
-
-// define here your locale identifier: de_DE, ru_RU, etc
-#define LOCALE_IDENTIFIER @"FunWordKeyboard"
-
-@interface NSLocale (iOS8)
-@end
-
-#endif
-
-//  NSLocale+ios8.m
-//  Created by Alexey Matveev on 01.11.2014.
-//  Copyright (c) 2014 Alexey Matveev. All rights reserved.
-
-#if TARGET_IPHONE_SIMULATOR
-
-#import <objc/runtime.h>
-
-@implementation NSLocale (iOS8)
-
-+ (void)load
-{
-//    Method originalMethod = class_getClassMethod(self, @selector(currentLocale));
-//    Method swizzledMethod = class_getClassMethod(self, @selector(swizzled_currentLocale));
-//    method_exchangeImplementations(originalMethod, swizzledMethod);
-}
-
-+ (NSLocale*)swizzled_currentLocale
-{
-    return [NSLocale localeWithLocaleIdentifier:LOCALE_IDENTIFIER];
-}
-
-@end
-
-#endif
+#import "FWFirstVC.h"
+#import "FWSecondVC.h"
+#import "FWThirdVC.h"
+#import "FWFouthVC.h"
 
 @interface AppDelegate ()
 
@@ -53,7 +20,35 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    FECustomTabBarController*tabBarVC = [[FECustomTabBarController alloc] init];
+    
+    FWFirstVC *firstVC = [[FWFirstVC alloc] init];
+    UINavigationController *firstNaviVC  = [[UINavigationController alloc] initWithRootViewController:firstVC];
+    
+    FWSecondVC *secondVC = [[FWSecondVC alloc] init];
+    UINavigationController *secondNaviVC = [[UINavigationController alloc] initWithRootViewController:secondVC];
+    
+    FWThirdVC *thirdVC = [[FWThirdVC alloc] init];
+    UINavigationController *thirdNaviVC = [[UINavigationController alloc] initWithRootViewController:thirdVC];
+    
+    FWFouthVC *fourth = [[FWFouthVC alloc] init];
+    UINavigationController *fourthNaviVC = [[UINavigationController alloc] initWithRootViewController:fourth];
+    
+    [tabBarVC setViewControllers:@[firstNaviVC,secondNaviVC,thirdNaviVC,fourthNaviVC]];
+    [tabBarVC setSelectedIndex:0];
+    
+    UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    window.rootViewController = tabBarVC;
+    self.window = window;
+    [self.window makeKeyAndVisible];
+    
+    UINavigationBar *naviBar = [UINavigationBar appearance];
+    [naviBar setBarTintColor:FERGB(0x2e, 0x39, 0x48, 1.0)];
+    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName,nil];
+    [naviBar setTitleTextAttributes:attributes];
+    
+    
     return YES;
 }
 

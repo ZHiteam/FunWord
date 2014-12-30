@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  FWThirdVC.h
 //  FunWord
 //
-//  Created by admin on 14-12-21.
+//  Created by admin on 14-12-30.
 //  Copyright (c) 2014年 funword. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface FWThirdVC : UIViewController
 
 @end
-
