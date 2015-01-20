@@ -34,6 +34,7 @@
 @interface RootViewController ()<UITabBarControllerDelegate>
 @property (nonatomic,strong) UIImageView* barView;
 @property (nonatomic,strong) NSArray*   barItems;
+@property (nonatomic,assign) NSInteger  preIndex;
 @end
 
 @implementation RootViewController
@@ -103,12 +104,21 @@
     self.barItems = @[item,item2,item3];
     
     self.tabBar.translucent = NO;
+    
+    self.preIndex = 0;
+}
+
+-(BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController{
+    
+    self.preIndex = self.selectedIndex;
+    
+    return YES;
 }
 
 -(void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
     NSUInteger index = [self.viewControllers indexOfObject:viewController];
     
-    if ([viewController isKindOfClass:[UINavigationController class]]) {
+    if ([viewController isKindOfClass:[UINavigationController class]] && index == self.preIndex) {
         [((UINavigationController*)viewController) popToRootViewControllerAnimated:YES];
     }
     

@@ -27,15 +27,15 @@ typedef enum E_CATAGORY_TYPE{
     [self loadContent];
 }
 
--(void)loadContent{
-    self.navigationItem.title = @"Ranking";
+-(void)viewWillAppear:(BOOL)animated{
     [self loadDefaultSetting];
-    
-    [self loadButton];
-
 }
 
--(void)viewWillAppear:(BOOL)animated{
+-(void)loadContent{
+    self.navigationItem.title = @"Ranking";
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_pattern.jpg"]];
+    [self loadButton];
+
 }
 
 -(void)loadButton{
@@ -86,4 +86,5 @@ typedef enum E_CATAGORY_TYPE{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 @end

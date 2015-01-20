@@ -8,6 +8,9 @@
 
 #import "UIViewController+GCloud.h"
 #import <objc/runtime.h>
+#import "UMSocialSnsPlatformManager.h"
+#import "UMSocialAccountManager.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 static const void* userInfoKey = &userInfoKey;
 
@@ -57,9 +60,15 @@ static const void* userInfoKey = &userInfoKey;
 }
 
 -(void)loadDefaultSetting{
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_pattern.jpg"]];
     
-    self.navigationItem.rightBarButtonItem = [self barItemWithImage:[UIImage imageNamed:@"topbar_bt_user"] target:self selector:@selector(userAction)];
+    NSDictionary* info = [[NSUserDefaults standardUserDefaults]valueForKey:@"SSO"];
+    if (info) {
+        [self updateUserInfo:info];
+    }
+    else{
+        self.navigationItem.rightBarButtonItem = [self barItemWithImage:[UIImage imageNamed:@"topbar_bt_user"] target:self selector:@selector(userAction)];        
+    }
+    
     if (self.navigationController.viewControllers.firstObject != self) {
         self.navigationItem.leftBarButtonItem = [self backBarButton];
     }
@@ -67,10 +76,70 @@ static const void* userInfoKey = &userInfoKey;
 }
 
 -(void)userAction{
-
+    
+    if ([[NSUserDefaults standardUserDefaults]valueForKey:@"SSO"]) {
+        return;
+    }
+    
+    UMSocialSnsPlatform *snsPlatform = [UMSocialSnsPlatformManager getSocialPlatformWithName:UMShareToSina];
+    
+    snsPlatform.loginClickHandler(self,[UMSocialControllerService defaultControllerService],YES,^(UMSocialResponseEntity *response){
+        //          获取微博用户名、uid、token等
+        
+        if (response.responseCode == UMSResponseCodeSuccess) {
+            UMSocialAccountEntity *snsAccount = [[UMSocialAccountManager socialAccountDictionary] valueForKey:UMShareToSina];
+            
+            NSMutableDictionary* info = [[NSMutableDictionary alloc]initWithCapacity:3];
+            if (snsAccount.userName) {
+                [info setObject:snsAccount.userName forKey:@"name"];
+            }
+            if (snsAccount.usid) {
+                [info setObject:snsAccount.usid forKey:@"usid"];
+            }
+            if (snsAccount.accessToken) {
+                [info setObject:snsAccount.accessToken forKey:@"token"];
+            }
+            if (snsAccount.iconURL) {
+                [info setObject:snsAccount.iconURL forKey:@"icon"];
+            }
+            
+            [[NSUserDefaults standardUserDefaults]setObject:info forKey:@"SSO"];
+            
+            [self updateUserInfo:info];
+        }
+        else{
+        }
+        
+//        [alert show];
+    });
 }
 
+-(void)updateUserInfo:(NSDictionary*)info{
+    if (!info[@"name"]) {
+        return;
+    }
+    
+    UIImageView* imageView = [[UIImageView alloc]initWithFrame:CGRectMake(1, 1, 32, 32)];
+    [imageView sd_setImageWithURL:[NSURL URLWithString:info[@"icon"]]];
+    imageView.layer.masksToBounds = YES;
+    imageView.layer.cornerRadius = 16;
 
+    UIImageView* bgImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 34, 34)];
+    bgImage.image = [UIImage imageNamed:@"user_bg"];
+    
+    UIControl* ctl = [[UIControl alloc]initWithFrame:CGRectMake(0, 0, 44, 44)];
+    [ctl addSubview:bgImage];
+    [ctl addSubview:imageView];
+    
+    [ctl addTarget:self action:@selector(userInfoAction) forControlEvents:UIControlEventTouchUpInside];
+
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:ctl];
+}
+
+-(void)userInfoAction{
+    [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"SSO"];
+    [self loadDefaultSetting];
+}
 @end
 
 @interface UINavigationItem (margin)

@@ -30,11 +30,12 @@
     return self;
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [self loadDefaultSetting];
+}
 
 -(void)viewDidLoad{
     [super viewDidLoad];
-    
-    [self loadDefaultSetting];
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"emotion_bg1"]];
     

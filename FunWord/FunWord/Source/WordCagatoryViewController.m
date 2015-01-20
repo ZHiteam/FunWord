@@ -19,7 +19,6 @@
 -(void)viewDidLoad{
     [super viewDidLoad];
     
-    [self loadDefaultSetting];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"text_bg2"]];
     
     if (self.userInfo) {
@@ -33,6 +32,10 @@
     }
     
     [self.view addSubview:self.contentTable];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [self loadDefaultSetting];
 }
 
 

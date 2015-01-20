@@ -34,10 +34,14 @@
     [self loadContent];
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [self loadDefaultSetting];
+}
+
+
 -(void)loadContent{
     self.navigationItem.title = @"Love";
-    [self loadDefaultSetting];
-    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_pattern.jpg"]];
     [self.view addSubview:self.segment];
     [self.view addSubview:self.contentTable];
     

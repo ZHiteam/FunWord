@@ -20,10 +20,12 @@
     [self loadContent];
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [self loadDefaultSetting];
+}
+
 -(void)loadContent{
     self.navigationItem.title = @"Edit";
-    [self loadDefaultSetting];
-
 }
 
 - (void)didReceiveMemoryWarning {
