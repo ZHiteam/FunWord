@@ -16,10 +16,6 @@
 		84F23BD01A466CC90084F122 /* FunWordTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F23BCF1A466CC90084F122 /* FunWordTests.m */; };
 		84F23BE31A466CED0084F122 /* KeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F23BE21A466CED0084F122 /* KeyboardViewController.m */; };
 		84F23BE61A466CED0084F122 /* FunWordKeyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 84F23BDD1A466CED0084F122 /* FunWordKeyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		9C0FC13B1A6B91C600D1BC15 /* word.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C0FC1391A6B91C600D1BC15 /* word.xcdatamodeld */; };
-		9C0FC14B1A6D3E5E00D1BC15 /* WordEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0FC14A1A6D3E5E00D1BC15 /* WordEntity.m */; };
-		9C0FC14E1A6D3E5E00D1BC15 /* IconEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0FC14D1A6D3E5E00D1BC15 /* IconEntity.m */; };
-		9C0FC1511A6D3E5E00D1BC15 /* Catagory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0FC1501A6D3E5E00D1BC15 /* Catagory.m */; };
 		9C0FC1541A6D3E8800D1BC15 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0FC1531A6D3E8800D1BC15 /* RootViewController.m */; };
 		9C0FC1581A6D3F4B00D1BC15 /* RankingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0FC1571A6D3F4B00D1BC15 /* RankingViewController.m */; };
 		9C0FC15B1A6D3F5B00D1BC15 /* LoveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0FC15A1A6D3F5B00D1BC15 /* LoveViewController.m */; };
@@ -54,6 +50,27 @@
 		9C0FC1A41A6E047300D1BC15 /* emotion_bt_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C0FC1A31A6E047300D1BC15 /* emotion_bt_bg@2x.png */; };
 		9C0FC1A61A6E084500D1BC15 /* emotion_bg1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C0FC1A51A6E084500D1BC15 /* emotion_bg1@2x.png */; };
 		9C0FC1A81A6E10B000D1BC15 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C0FC1A71A6E10B000D1BC15 /* icon@2x.png */; };
+		9C0FC1AA1A6E297500D1BC15 /* word_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C0FC1A91A6E297500D1BC15 /* word_bg@2x.png */; };
+		9C0FC1AD1A6E30E400D1BC15 /* s2g.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C0FC1AC1A6E30E400D1BC15 /* s2g.ttf */; };
+		9C0FC1B01A6E328600D1BC15 /* WordCatagoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0FC1AF1A6E328600D1BC15 /* WordCatagoryCell.m */; };
+		9C0FC1B31A6E32D900D1BC15 /* CatagoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0FC1B21A6E32D900D1BC15 /* CatagoryModel.m */; };
+		9C0FC1B61A6E358200D1BC15 /* text_bt_bg1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C0FC1B41A6E358200D1BC15 /* text_bt_bg1@2x.png */; };
+		9C0FC1B71A6E358200D1BC15 /* text_bt_bg2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C0FC1B51A6E358200D1BC15 /* text_bt_bg2@2x.png */; };
+		9C0FC1BA1A6E373100D1BC15 /* WordCatagoryHeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0FC1B91A6E373100D1BC15 /* WordCatagoryHeadCell.m */; };
+		9C0FC1BD1A6E3A3B00D1BC15 /* WordCagatoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0FC1BC1A6E3A3B00D1BC15 /* WordCagatoryViewController.m */; };
+		9C0FC1C01A6E422E00D1BC15 /* WordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0FC1BF1A6E422E00D1BC15 /* WordModel.m */; };
+		9C0FC1C31A6E4A3D00D1BC15 /* WordTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0FC1C21A6E4A3D00D1BC15 /* WordTableView.m */; };
+		9C0FC1C61A6E4BEE00D1BC15 /* WordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0FC1C51A6E4BEE00D1BC15 /* WordCell.m */; };
+		9C0FC1C81A6E4D8900D1BC15 /* text_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C0FC1C71A6E4D8900D1BC15 /* text_bg@2x.png */; };
+		9C0FC1CB1A6E509900D1BC15 /* bt_love_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C0FC1C91A6E509900D1BC15 /* bt_love_off@2x.png */; };
+		9C0FC1CC1A6E509900D1BC15 /* bt_love_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C0FC1CA1A6E509900D1BC15 /* bt_love_on@2x.png */; };
+		9C0FC1D11A6E553000D1BC15 /* bt1_text_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C0FC1CD1A6E553000D1BC15 /* bt1_text_off@2x.png */; };
+		9C0FC1D21A6E553000D1BC15 /* bt1_text_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C0FC1CE1A6E553000D1BC15 /* bt1_text_on@2x.png */; };
+		9C0FC1D31A6E553000D1BC15 /* bt2_emotion_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C0FC1CF1A6E553000D1BC15 /* bt2_emotion_off@2x.png */; };
+		9C0FC1D41A6E553000D1BC15 /* bt2_emotion_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C0FC1D01A6E553000D1BC15 /* bt2_emotion_on@2x.png */; };
+		9C0FC1D61A6E568100D1BC15 /* bt_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C0FC1D51A6E568100D1BC15 /* bt_bg@2x.png */; };
+		9C0FC1D81A6E574800D1BC15 /* text_bg2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C0FC1D71A6E574800D1BC15 /* text_bg2@2x.png */; };
+		9C0FC1DB1A6E7E7C00D1BC15 /* EmotionCatagoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0FC1DA1A6E7E7C00D1BC15 /* EmotionCatagoryCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,13 +123,6 @@
 		84F23BE01A466CED0084F122 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84F23BE11A466CED0084F122 /* KeyboardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyboardViewController.h; sourceTree = "<group>"; };
 		84F23BE21A466CED0084F122 /* KeyboardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyboardViewController.m; sourceTree = "<group>"; };
-		9C0FC13A1A6B91C600D1BC15 /* word.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = word.xcdatamodel; sourceTree = "<group>"; };
-		9C0FC1491A6D3E5E00D1BC15 /* WordEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordEntity.h; sourceTree = "<group>"; };
-		9C0FC14A1A6D3E5E00D1BC15 /* WordEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordEntity.m; sourceTree = "<group>"; };
-		9C0FC14C1A6D3E5E00D1BC15 /* IconEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconEntity.h; sourceTree = "<group>"; };
-		9C0FC14D1A6D3E5E00D1BC15 /* IconEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconEntity.m; sourceTree = "<group>"; };
-		9C0FC14F1A6D3E5E00D1BC15 /* Catagory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Catagory.h; sourceTree = "<group>"; };
-		9C0FC1501A6D3E5E00D1BC15 /* Catagory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Catagory.m; sourceTree = "<group>"; };
 		9C0FC1521A6D3E8800D1BC15 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		9C0FC1531A6D3E8800D1BC15 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		9C0FC1561A6D3F4B00D1BC15 /* RankingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RankingViewController.h; sourceTree = "<group>"; };
@@ -159,6 +169,35 @@
 		9C0FC1A31A6E047300D1BC15 /* emotion_bt_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "emotion_bt_bg@2x.png"; sourceTree = "<group>"; };
 		9C0FC1A51A6E084500D1BC15 /* emotion_bg1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "emotion_bg1@2x.png"; sourceTree = "<group>"; };
 		9C0FC1A71A6E10B000D1BC15 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		9C0FC1A91A6E297500D1BC15 /* word_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "word_bg@2x.png"; sourceTree = "<group>"; };
+		9C0FC1AC1A6E30E400D1BC15 /* s2g.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = s2g.ttf; sourceTree = "<group>"; };
+		9C0FC1AE1A6E328600D1BC15 /* WordCatagoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordCatagoryCell.h; sourceTree = "<group>"; };
+		9C0FC1AF1A6E328600D1BC15 /* WordCatagoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordCatagoryCell.m; sourceTree = "<group>"; };
+		9C0FC1B11A6E32D900D1BC15 /* CatagoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatagoryModel.h; sourceTree = "<group>"; };
+		9C0FC1B21A6E32D900D1BC15 /* CatagoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatagoryModel.m; sourceTree = "<group>"; };
+		9C0FC1B41A6E358200D1BC15 /* text_bt_bg1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "text_bt_bg1@2x.png"; sourceTree = "<group>"; };
+		9C0FC1B51A6E358200D1BC15 /* text_bt_bg2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "text_bt_bg2@2x.png"; sourceTree = "<group>"; };
+		9C0FC1B81A6E373100D1BC15 /* WordCatagoryHeadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordCatagoryHeadCell.h; sourceTree = "<group>"; };
+		9C0FC1B91A6E373100D1BC15 /* WordCatagoryHeadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordCatagoryHeadCell.m; sourceTree = "<group>"; };
+		9C0FC1BB1A6E3A3B00D1BC15 /* WordCagatoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordCagatoryViewController.h; sourceTree = "<group>"; };
+		9C0FC1BC1A6E3A3B00D1BC15 /* WordCagatoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordCagatoryViewController.m; sourceTree = "<group>"; };
+		9C0FC1BE1A6E422E00D1BC15 /* WordModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordModel.h; sourceTree = "<group>"; };
+		9C0FC1BF1A6E422E00D1BC15 /* WordModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordModel.m; sourceTree = "<group>"; };
+		9C0FC1C11A6E4A3D00D1BC15 /* WordTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordTableView.h; sourceTree = "<group>"; };
+		9C0FC1C21A6E4A3D00D1BC15 /* WordTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordTableView.m; sourceTree = "<group>"; };
+		9C0FC1C41A6E4BEE00D1BC15 /* WordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordCell.h; sourceTree = "<group>"; };
+		9C0FC1C51A6E4BEE00D1BC15 /* WordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordCell.m; sourceTree = "<group>"; };
+		9C0FC1C71A6E4D8900D1BC15 /* text_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "text_bg@2x.png"; sourceTree = "<group>"; };
+		9C0FC1C91A6E509900D1BC15 /* bt_love_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bt_love_off@2x.png"; sourceTree = "<group>"; };
+		9C0FC1CA1A6E509900D1BC15 /* bt_love_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bt_love_on@2x.png"; sourceTree = "<group>"; };
+		9C0FC1CD1A6E553000D1BC15 /* bt1_text_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bt1_text_off@2x.png"; sourceTree = "<group>"; };
+		9C0FC1CE1A6E553000D1BC15 /* bt1_text_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bt1_text_on@2x.png"; sourceTree = "<group>"; };
+		9C0FC1CF1A6E553000D1BC15 /* bt2_emotion_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bt2_emotion_off@2x.png"; sourceTree = "<group>"; };
+		9C0FC1D01A6E553000D1BC15 /* bt2_emotion_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bt2_emotion_on@2x.png"; sourceTree = "<group>"; };
+		9C0FC1D51A6E568100D1BC15 /* bt_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bt_bg@2x.png"; sourceTree = "<group>"; };
+		9C0FC1D71A6E574800D1BC15 /* text_bg2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "text_bg2@2x.png"; sourceTree = "<group>"; };
+		9C0FC1D91A6E7E7C00D1BC15 /* EmotionCatagoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmotionCatagoryCell.h; sourceTree = "<group>"; };
+		9C0FC1DA1A6E7E7C00D1BC15 /* EmotionCatagoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmotionCatagoryCell.m; sourceTree = "<group>"; };
 		A64BDF7003DDBCB686607B71 /* libPods-FunWord.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FunWord.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -205,7 +244,6 @@
 				9C0FC1781A6D64EC00D1BC15 /* Helper */,
 				9C0FC16F1A6D4F3A00D1BC15 /* View */,
 				9C0FC1551A6D3F2F00D1BC15 /* Controller */,
-				9C0FC1481A6D3E4400D1BC15 /* Model */,
 				9C0FC1521A6D3E8800D1BC15 /* RootViewController.h */,
 				9C0FC1531A6D3E8800D1BC15 /* RootViewController.m */,
 			);
@@ -215,6 +253,19 @@
 		840136D81A53037700CD5635 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				9C0FC1D71A6E574800D1BC15 /* text_bg2@2x.png */,
+				9C0FC1D51A6E568100D1BC15 /* bt_bg@2x.png */,
+				9C0FC1CD1A6E553000D1BC15 /* bt1_text_off@2x.png */,
+				9C0FC1CE1A6E553000D1BC15 /* bt1_text_on@2x.png */,
+				9C0FC1CF1A6E553000D1BC15 /* bt2_emotion_off@2x.png */,
+				9C0FC1D01A6E553000D1BC15 /* bt2_emotion_on@2x.png */,
+				9C0FC1C91A6E509900D1BC15 /* bt_love_off@2x.png */,
+				9C0FC1CA1A6E509900D1BC15 /* bt_love_on@2x.png */,
+				9C0FC1C71A6E4D8900D1BC15 /* text_bg@2x.png */,
+				9C0FC1B41A6E358200D1BC15 /* text_bt_bg1@2x.png */,
+				9C0FC1B51A6E358200D1BC15 /* text_bt_bg2@2x.png */,
+				9C0FC1AC1A6E30E400D1BC15 /* s2g.ttf */,
+				9C0FC1A91A6E297500D1BC15 /* word_bg@2x.png */,
 				9C0FC1A71A6E10B000D1BC15 /* icon@2x.png */,
 				9C0FC1A51A6E084500D1BC15 /* emotion_bg1@2x.png */,
 				9C0FC1A31A6E047300D1BC15 /* emotion_bt_bg@2x.png */,
@@ -237,7 +288,6 @@
 				9C0FC1621A6D407900D1BC15 /* love_on@2x.png */,
 				9C0FC1631A6D407900D1BC15 /* ranking_off@2x.png */,
 				9C0FC1641A6D407900D1BC15 /* ranking_on@2x.png */,
-				9C0FC1391A6B91C600D1BC15 /* word.xcdatamodeld */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -323,19 +373,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		9C0FC1481A6D3E4400D1BC15 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				9C0FC14F1A6D3E5E00D1BC15 /* Catagory.h */,
-				9C0FC1501A6D3E5E00D1BC15 /* Catagory.m */,
-				9C0FC14C1A6D3E5E00D1BC15 /* IconEntity.h */,
-				9C0FC14D1A6D3E5E00D1BC15 /* IconEntity.m */,
-				9C0FC1491A6D3E5E00D1BC15 /* WordEntity.h */,
-				9C0FC14A1A6D3E5E00D1BC15 /* WordEntity.m */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
 		9C0FC1551A6D3F2F00D1BC15 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -351,6 +388,8 @@
 				9C0FC1821A6D693900D1BC15 /* WordViewController.m */,
 				9C0FC1951A6DFCCF00D1BC15 /* EmotionViewController.h */,
 				9C0FC1961A6DFCCF00D1BC15 /* EmotionViewController.m */,
+				9C0FC1BB1A6E3A3B00D1BC15 /* WordCagatoryViewController.h */,
+				9C0FC1BC1A6E3A3B00D1BC15 /* WordCagatoryViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -362,6 +401,16 @@
 				9C0FC1711A6D4F4B00D1BC15 /* GCTabbarItem.m */,
 				9C0FC1981A6DFE6900D1BC15 /* FunWorkSegmentView.h */,
 				9C0FC1991A6DFE6900D1BC15 /* FunWorkSegmentView.m */,
+				9C0FC1AE1A6E328600D1BC15 /* WordCatagoryCell.h */,
+				9C0FC1AF1A6E328600D1BC15 /* WordCatagoryCell.m */,
+				9C0FC1B81A6E373100D1BC15 /* WordCatagoryHeadCell.h */,
+				9C0FC1B91A6E373100D1BC15 /* WordCatagoryHeadCell.m */,
+				9C0FC1C11A6E4A3D00D1BC15 /* WordTableView.h */,
+				9C0FC1C21A6E4A3D00D1BC15 /* WordTableView.m */,
+				9C0FC1C41A6E4BEE00D1BC15 /* WordCell.h */,
+				9C0FC1C51A6E4BEE00D1BC15 /* WordCell.m */,
+				9C0FC1D91A6E7E7C00D1BC15 /* EmotionCatagoryCell.h */,
+				9C0FC1DA1A6E7E7C00D1BC15 /* EmotionCatagoryCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -382,6 +431,10 @@
 			children = (
 				9C0FC18A1A6DF52800D1BC15 /* BaseModel.h */,
 				9C0FC18B1A6DF52800D1BC15 /* BaseModel.m */,
+				9C0FC1B11A6E32D900D1BC15 /* CatagoryModel.h */,
+				9C0FC1B21A6E32D900D1BC15 /* CatagoryModel.m */,
+				9C0FC1BE1A6E422E00D1BC15 /* WordModel.h */,
+				9C0FC1BF1A6E422E00D1BC15 /* WordModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -465,6 +518,7 @@
 				TargetAttributes = {
 					84F23BAF1A466CC90084F122 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 3R4K7E9589;
 					};
 					84F23BC81A466CC90084F122 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -472,6 +526,7 @@
 					};
 					84F23BDC1A466CED0084F122 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 3R4K7E9589;
 					};
 				};
 			};
@@ -503,27 +558,40 @@
 				9C0FC1771A6D64B800D1BC15 /* topbar_bt_user@2x.png in Resources */,
 				84F23BC41A466CC90084F122 /* LaunchScreen.xib in Resources */,
 				9C0FC1691A6D407900D1BC15 /* ranking_off@2x.png in Resources */,
+				9C0FC1B71A6E358200D1BC15 /* text_bt_bg2@2x.png in Resources */,
 				9C0FC1A21A6E003400D1BC15 /* bt_popular_on@2x.png in Resources */,
+				9C0FC1CC1A6E509900D1BC15 /* bt_love_on@2x.png in Resources */,
+				9C0FC1D81A6E574800D1BC15 /* text_bg2@2x.png in Resources */,
+				9C0FC1B61A6E358200D1BC15 /* text_bt_bg1@2x.png in Resources */,
+				9C0FC1D31A6E553000D1BC15 /* bt2_emotion_off@2x.png in Resources */,
 				9C0FC1801A6D68D200D1BC15 /* topbar_bt_back@2x.png in Resources */,
 				9C0FC1A11A6E003400D1BC15 /* bt_popular_off@2x.png in Resources */,
 				84F23BC11A466CC90084F122 /* Images.xcassets in Resources */,
 				9C0FC1671A6D407900D1BC15 /* love_off@2x.png in Resources */,
+				9C0FC1D21A6E553000D1BC15 /* bt1_text_on@2x.png in Resources */,
 				9C0FC1A01A6E003400D1BC15 /* bt_new_on@2x.png in Resources */,
 				9C0FC1661A6D407900D1BC15 /* edit_on@2x.png in Resources */,
+				9C0FC1C81A6E4D8900D1BC15 /* text_bg@2x.png in Resources */,
 				9C0FC1A61A6E084500D1BC15 /* emotion_bg1@2x.png in Resources */,
+				9C0FC1AA1A6E297500D1BC15 /* word_bg@2x.png in Resources */,
+				9C0FC1D41A6E553000D1BC15 /* bt2_emotion_on@2x.png in Resources */,
 				9C0FC16E1A6D495900D1BC15 /* topbar_bg@2x.png in Resources */,
 				9C0FC1921A6DFBFB00D1BC15 /* ranking_bt_bg@2x.png in Resources */,
 				9C0FC18F1A6DF8FB00D1BC15 /* bt_emotion@2x.png in Resources */,
 				9C0FC1681A6D407900D1BC15 /* love_on@2x.png in Resources */,
 				9C0FC16C1A6D422F00D1BC15 /* actionbar_bg@2x.png in Resources */,
+				9C0FC1D11A6E553000D1BC15 /* bt1_text_off@2x.png in Resources */,
 				9C0FC1851A6D6AC300D1BC15 /* bg_pattern@2x.jpg in Resources */,
 				9C0FC1A81A6E10B000D1BC15 /* icon@2x.png in Resources */,
 				9C0FC1A41A6E047300D1BC15 /* emotion_bt_bg@2x.png in Resources */,
 				9C0FC1651A6D407900D1BC15 /* edit_off@2x.png in Resources */,
+				9C0FC1CB1A6E509900D1BC15 /* bt_love_off@2x.png in Resources */,
 				9C0FC1941A6DFC4800D1BC15 /* rose_line@2x.png in Resources */,
 				9C0FC19F1A6E003400D1BC15 /* bt_new_off@2x.png in Resources */,
 				9C0FC16A1A6D407900D1BC15 /* ranking_on@2x.png in Resources */,
 				9C0FC1901A6DF8FB00D1BC15 /* bt_text@2x.png in Resources */,
+				9C0FC1AD1A6E30E400D1BC15 /* s2g.ttf in Resources */,
+				9C0FC1D61A6E568100D1BC15 /* bt_bg@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,22 +651,26 @@
 			files = (
 				9C0FC1971A6DFCCF00D1BC15 /* EmotionViewController.m in Sources */,
 				9C0FC1751A6D626600D1BC15 /* GCNavigationViewController.m in Sources */,
-				9C0FC14B1A6D3E5E00D1BC15 /* WordEntity.m in Sources */,
 				9C0FC18C1A6DF52800D1BC15 /* BaseModel.m in Sources */,
+				9C0FC1C01A6E422E00D1BC15 /* WordModel.m in Sources */,
 				84F23BB91A466CC90084F122 /* AppDelegate.m in Sources */,
-				9C0FC13B1A6B91C600D1BC15 /* word.xcdatamodeld in Sources */,
+				9C0FC1C61A6E4BEE00D1BC15 /* WordCell.m in Sources */,
 				9C0FC17E1A6D658200D1BC15 /* UIViewController+GCloud.m in Sources */,
 				9C0FC1721A6D4F4B00D1BC15 /* GCTabbarItem.m in Sources */,
+				9C0FC1BD1A6E3A3B00D1BC15 /* WordCagatoryViewController.m in Sources */,
 				9C0FC1581A6D3F4B00D1BC15 /* RankingViewController.m in Sources */,
 				9C0FC15E1A6D3F6500D1BC15 /* EditViewController.m in Sources */,
+				9C0FC1B01A6E328600D1BC15 /* WordCatagoryCell.m in Sources */,
 				9C0FC1831A6D693900D1BC15 /* WordViewController.m in Sources */,
 				9C0FC1541A6D3E8800D1BC15 /* RootViewController.m in Sources */,
 				9C0FC15B1A6D3F5B00D1BC15 /* LoveViewController.m in Sources */,
-				9C0FC1511A6D3E5E00D1BC15 /* Catagory.m in Sources */,
 				9C0FC1881A6D6BB700D1BC15 /* HttpClient.m in Sources */,
-				9C0FC14E1A6D3E5E00D1BC15 /* IconEntity.m in Sources */,
+				9C0FC1C31A6E4A3D00D1BC15 /* WordTableView.m in Sources */,
+				9C0FC1BA1A6E373100D1BC15 /* WordCatagoryHeadCell.m in Sources */,
+				9C0FC1B31A6E32D900D1BC15 /* CatagoryModel.m in Sources */,
 				9C0FC19A1A6DFE6900D1BC15 /* FunWorkSegmentView.m in Sources */,
 				84F23BB61A466CC90084F122 /* main.m in Sources */,
+				9C0FC1DB1A6E7E7C00D1BC15 /* EmotionCatagoryCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -726,11 +798,13 @@
 			baseConfigurationReference = 60B180F0B3BCB450C6EED938 /* Pods-FunWord.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: lu ye (FD78BG9MG9)";
 				GCC_PREFIX_HEADER = "FunWord/FunWord-Prefix.pch";
 				INFOPLIST_FILE = FunWord/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "b4087de7-190f-45e2-8739-a8470b135fb4";
 			};
 			name = Debug;
 		};
@@ -739,11 +813,13 @@
 			baseConfigurationReference = 201D0E9A244D85177962D227 /* Pods-FunWord.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: lu ye (3R4K7E9589)";
 				GCC_PREFIX_HEADER = "FunWord/FunWord-Prefix.pch";
 				INFOPLIST_FILE = FunWord/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "b4087de7-190f-45e2-8739-a8470b135fb4";
 			};
 			name = Release;
 		};
@@ -784,6 +860,8 @@
 		84F23BE81A466CED0084F122 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -792,6 +870,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "240598fd-a1c8-48a2-b1f4-b79bb43871ad";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -799,13 +878,96 @@
 		84F23BE91A466CED0084F122 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = FunWordKeyboard/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "240598fd-a1c8-48a2-b1f4-b79bb43871ad";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
+		};
+		9C0FC1DC1A6EA19000D1BC15 /* ad hoc distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: lu ye (3R4K7E9589)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: lu ye (3R4K7E9589)";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "ad hoc distribution";
+		};
+		9C0FC1DD1A6EA19000D1BC15 /* ad hoc distribution */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 201D0E9A244D85177962D227 /* Pods-FunWord.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: lu ye (3R4K7E9589)";
+				GCC_PREFIX_HEADER = "FunWord/FunWord-Prefix.pch";
+				INFOPLIST_FILE = FunWord/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "b4087de7-190f-45e2-8739-a8470b135fb4";
+			};
+			name = "ad hoc distribution";
+		};
+		9C0FC1DE1A6EA19000D1BC15 /* ad hoc distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FunWordTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FunWord.app/FunWord";
+			};
+			name = "ad hoc distribution";
+		};
+		9C0FC1DF1A6EA19000D1BC15 /* ad hoc distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				INFOPLIST_FILE = FunWordKeyboard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "240598fd-a1c8-48a2-b1f4-b79bb43871ad";
+				SKIP_INSTALL = YES;
+			};
+			name = "ad hoc distribution";
 		};
 /* End XCBuildConfiguration section */
 
@@ -815,6 +977,7 @@
 			buildConfigurations = (
 				84F23BD11A466CC90084F122 /* Debug */,
 				84F23BD21A466CC90084F122 /* Release */,
+				9C0FC1DC1A6EA19000D1BC15 /* ad hoc distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -824,6 +987,7 @@
 			buildConfigurations = (
 				84F23BD41A466CC90084F122 /* Debug */,
 				84F23BD51A466CC90084F122 /* Release */,
+				9C0FC1DD1A6EA19000D1BC15 /* ad hoc distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -833,6 +997,7 @@
 			buildConfigurations = (
 				84F23BD71A466CC90084F122 /* Debug */,
 				84F23BD81A466CC90084F122 /* Release */,
+				9C0FC1DE1A6EA19000D1BC15 /* ad hoc distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -842,24 +1007,12 @@
 			buildConfigurations = (
 				84F23BE81A466CED0084F122 /* Debug */,
 				84F23BE91A466CED0084F122 /* Release */,
+				9C0FC1DF1A6EA19000D1BC15 /* ad hoc distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		9C0FC1391A6B91C600D1BC15 /* word.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				9C0FC13A1A6B91C600D1BC15 /* word.xcdatamodel */,
-			);
-			currentVersion = 9C0FC13A1A6B91C600D1BC15 /* word.xcdatamodel */;
-			path = word.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 84F23BA81A466CC90084F122 /* Project object */;
 }

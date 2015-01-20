@@ -10,7 +10,4 @@
 
 @interface EmotionViewController : UIViewController
 
-//// 1：流行 2：最新
-@property (nonatomic,assign) NSInteger type;
-
 @end

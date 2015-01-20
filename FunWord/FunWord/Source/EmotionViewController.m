@@ -10,7 +10,11 @@
 #import "FunWorkSegmentView.h"
 
 @interface EmotionViewController()<FunWorkSegmentViewDelegate>
+
+//// 1：流行 2：最新
+@property (nonatomic,assign) int32_t type;
 @property (nonatomic,strong) FunWorkSegmentView*    segment;
+@property (nonatomic,strong) UITableView*           contentTable;
 @end
 
 @implementation EmotionViewController
@@ -36,23 +40,11 @@
     
     [self.view addSubview:self.segment];
     
+    [self.view addSubview:self.contentTable];
+    
     [self reloadData];
 }
 
--(void)reloadData{
-    if (1 ==  self.type) {
-        self.navigationItem.title = @"流行的表情";
-    }
-    else{
-        self.navigationItem.title = @"最新的表情";
-    }
-    
-    [HttpClient requestDataWithPath:@"/api/font/getIconCategory" paramers:@{@"loadType":[NSString stringWithFormat:@"%ld",self.type]} success:^(id responseObject) {
-        NSLog(@"%@",responseObject);
-    } failure:^(NSError *error) {
-        NSLog(@"%@",error);
-    }];
-}
 
 -(FunWorkSegmentView *)segment{
     
@@ -63,6 +55,44 @@
     }
     
     return _segment;
+}
+
+-(UITableView *)contentTable{
+    
+    if (!_contentTable) {
+        _contentTable = [[UITableView alloc]initWithFrame:CGRectMake(0, self.segment.height+self.segment.y, self.segment.width, self.view.height-self.segment.height-self.segment.y-self.tabBarController.tabBar.height)];
+        _contentTable.showsHorizontalScrollIndicator = NO;
+        _contentTable.showsVerticalScrollIndicator = NO;
+        _contentTable.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _contentTable.backgroundColor = [UIColor clearColor];
+//        _contentTable.delegate      = self;
+//        _contentTable.dataSource    = self;
+    }
+    
+    return _contentTable;
+}
+
+#pragma -mark load data
+
+-(void)reloadData{
+    if (1 ==  self.type) {
+        self.navigationItem.title = @"流行的表情";
+    }
+    else{
+        self.navigationItem.title = @"最新的表情";
+    }
+    
+    NSDictionary* dic = [NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"%d",self.type] forKey:@"loadType"];
+    
+    [HttpClient requestDataWithPath:@"/api/font/getIconCategory" paramers:dic success:^(id responseObject) {
+        NSLog(@"%@",responseObject);
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
+}
+
+-(void)praserData:(NSDictionary* )data{
+    
 }
 
 #pragma -mark FunWorkSegmentViewDelegate

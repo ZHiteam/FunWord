@@ -40,6 +40,7 @@
     [lx setImage:[UIImage imageNamed:@"bt_popular_off"] forState:UIControlStateNormal];
     [lx setImage:[UIImage imageNamed:@"bt_popular_on"] forState:UIControlStateHighlighted];
     [lx setImage:[UIImage imageNamed:@"bt_popular_on"] forState:UIControlStateSelected];
+    [lx setImage:[UIImage imageNamed:@"bt_popular_on"] forState:UIControlStateReserved];
     [lx addTarget:self action:@selector(segmentAction:) forControlEvents:UIControlEventTouchUpInside];
     
     [self addSubview:lx];
@@ -49,6 +50,7 @@
     [xin setImage:[UIImage imageNamed:@"bt_new_off"] forState:UIControlStateNormal];
     [xin setImage:[UIImage imageNamed:@"bt_new_on"] forState:UIControlStateHighlighted];
     [xin setImage:[UIImage imageNamed:@"bt_new_on"] forState:UIControlStateSelected];
+    [xin setImage:[UIImage imageNamed:@"bt_new_on"] forState:UIControlStateReserved];
     [xin addTarget:self action:@selector(segmentAction:) forControlEvents:UIControlEventTouchUpInside];
     
     [self addSubview:xin];
@@ -77,6 +79,7 @@
     [segBtn setImage:image forState:UIControlStateNormal];
     [segBtn setImage:selectImage forState:UIControlStateHighlighted];
     [segBtn setImage:selectImage forState:UIControlStateSelected];
+    [segBtn setImage:selectImage forState:UIControlStateReserved];
 }
 
 -(void)segmentAction:(id)sender{

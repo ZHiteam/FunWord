@@ -42,6 +42,21 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self enterHome];
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(_doNotifaction:) name:PUSH_NOTIFACTION object:nil];
+}
+
+-(void)_doNotifaction:(NSNotification*)notifaction{
+    if ([notifaction.name isEqualToString:PUSH_NOTIFACTION]) {
+        NSDictionary* obj = [notifaction object];
+        if ([obj isKindOfClass:[NSDictionary class]]) {
+            [self pushActionWithInfo:obj];
+        }
+    }
+}
+
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -110,6 +125,32 @@
             [item setSelected:NO];
         }
     }
+}
+
+#pragma -mark push action
+-(void)pushActionWithInfo:(NSDictionary*)obj{
+    NSString* clsStr = obj[@"ctl"];
+    Class cls = NSClassFromString(clsStr);
+    if (!cls) {
+        return;
+    }
+    
+    id val = [[cls alloc]init];
+    if (![val isKindOfClass:[UIViewController class]]) {
+        return;
+    }
+    
+    UIViewController* viewCtl = (UIViewController*)val;
+    if (obj[@"info"]) {
+        viewCtl.userInfo = obj[@"info"];
+    }
+    
+    UINavigationController* navi = (UINavigationController*)self.selectedViewController;
+    if (![navi isKindOfClass:[UINavigationController class]]) {
+        navi = navi.navigationController;
+    }
+    
+    [navi pushViewController:viewCtl animated:YES];
 }
 
 @end

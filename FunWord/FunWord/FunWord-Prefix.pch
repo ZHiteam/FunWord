@@ -8,6 +8,11 @@
     #import <Foundation/Foundation.h>
 #endif
 
+#define FONT(x) [UIFont fontWithName:@"S2G-love" size:x]
+#define SYS_FONT(x) [UIFont fontWithName:@"" size:x]
+
+#define PUSH_NOTIFACTION    @"push_Notifaction"
+
 #import "FEFramework.h"
 #import "UIViewController+GCloud.h"
 #import "HttpClient.h"
