@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6252" systemVersion="14A389" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Catagory" representedClassName="Catagory" syncable="YES">
+        <attribute name="catagoryId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="parentId" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="IconEntity" representedClassName="IconEntity" syncable="YES">
+        <attribute name="categoryId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="favorite" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iconId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iconURL" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Catagory" syncable="YES"/>
+    </entity>
+    <entity name="WordEntity" representedClassName="WordEntity" syncable="YES">
+        <attribute name="catagoryId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="favorite" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="richWord" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="wordId" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Catagory" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Catagory" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="WordEntity" positionX="-54" positionY="0" width="128" height="118"/>
+        <element name="IconEntity" positionX="-45" positionY="54" width="128" height="118"/>
+    </elements>
+</model>

@@ -1,11 +1,11 @@
 PODS:
   - AFNetworking (2.4.1):
-    - AFNetworking/NSURLConnection (= 2.4.1)
-    - AFNetworking/NSURLSession (= 2.4.1)
-    - AFNetworking/Reachability (= 2.4.1)
-    - AFNetworking/Security (= 2.4.1)
-    - AFNetworking/Serialization (= 2.4.1)
-    - AFNetworking/UIKit (= 2.4.1)
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+    - AFNetworking/UIKit
   - AFNetworking/NSURLConnection (2.4.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
@@ -25,7 +25,7 @@ PODS:
     - SDWebImage
   - HMSegmentedControl (1.4.0)
   - SDWebImage (3.6):
-    - SDWebImage/Core (= 3.6)
+    - SDWebImage/Core
   - SDWebImage/Core (3.6)
   - SVProgressHUD (1.0)
   - SVPullToRefresh (0.4.1)
@@ -45,19 +45,14 @@ EXTERNAL SOURCES:
   FEFramework:
     :git: git@github.com:FerrariXX/FEFramework.git
 
-CHECKOUT OPTIONS:
-  FEFramework:
-    :commit: cd0d36bd23444dee5e767fc23ad46c24df9b4d5b
-    :git: git@github.com:FerrariXX/FEFramework.git
-
 SPEC CHECKSUMS:
-  AFNetworking: 6bd2fd19478330ef9b26cadf7790d334d3b1f020
-  ASProgressPopUpView: 6449aac9e7ef4d24de18a4778445fc2f22fbd121
+  AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
+  ASProgressPopUpView: 7443b650bb54acb6557ab8495eaa6adea2183577
   FEFramework: aa4cbf81de7b0f8e5eeae4dbea4fc585b3d14c18
-  HMSegmentedControl: 454c1fbbd59474e9bd72f591079e25a6d5d39cb2
-  SDWebImage: 8dfe7c93884a40dfdca9f773360d9dea2d96222d
-  SVProgressHUD: 9ae7b26053aba0772f5e0299df3dff25e24ce002
-  SVPullToRefresh: ed2780467bd4a16a346388e6f628ce983d100f62
-  TPKeyboardAvoiding: 7e48faec0408ff917a17572bf2bb48943fb1b6e8
+  HMSegmentedControl: c0517a8d4b80c978b8386f863f1c44729cfd7d6f
+  SDWebImage: c6989652c1cdf27cbdf3f56957e2030f825af5bc
+  SVProgressHUD: 5034c6e22b8c2ca3e09402e48d41ed0340aa1c50
+  SVPullToRefresh: d5161ebc833a38b465364412e5e307ca80bbb190
+  TPKeyboardAvoiding: 925e1e1912597d1a4956697eec3bd9656552153c
 
-COCOAPODS: 0.35.0
+COCOAPODS: 0.34.4

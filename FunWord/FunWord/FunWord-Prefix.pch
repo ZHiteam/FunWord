@@ -9,3 +9,5 @@
 #endif
 
 #import "FEFramework.h"
+#import "UIViewController+GCloud.h"
+#import "HttpClient.h"
