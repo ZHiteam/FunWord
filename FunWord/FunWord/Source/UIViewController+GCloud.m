@@ -9,20 +9,7 @@
 #import "UIViewController+GCloud.h"
 #import <objc/runtime.h>
 
-static const void* userInfoKey = &userInfoKey;
-
 @implementation UIViewController (GCloud)
-
-@dynamic userInfo;
-
--(void)setUserInfo:(id)userInfo{
-    objc_setAssociatedObject(self, userInfoKey, userInfo, OBJC_ASSOCIATION_RETAIN);
-}
-
--(id)userInfo{
-    return objc_getAssociatedObject(self, userInfoKey);
-}
-
 
 -(UIBarButtonItem *)barItemWithImage:(UIImage *)image target:(id)target selector:(SEL)selector{
     
@@ -61,7 +48,7 @@ static const void* userInfoKey = &userInfoKey;
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_pattern.jpg"]];
     
     self.navigationItem.rightBarButtonItem = [self barItemWithImage:[UIImage imageNamed:@"topbar_bt_user"] target:self selector:@selector(userAction)];
-    if (self.navigationController.topViewController != self) {
+    if (self.navigationController.viewControllers.firstObject != self) {
         self.navigationItem.leftBarButtonItem = [self backBarButton];
     }
 

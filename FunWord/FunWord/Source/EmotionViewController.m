@@ -1,20 +1,20 @@
 //
-//  WordViewController.m
+//  EmotionViewController.m
 //  FunWord
 //
 //  Created by elvis on 15/1/20.
 //  Copyright (c) 2015年 funword. All rights reserved.
 //
 
-#import "WordViewController.h"
+#import "EmotionViewController.h"
 #import "FunWorkSegmentView.h"
 
-@interface WordViewController()<FunWorkSegmentViewDelegate>
-
+@interface EmotionViewController()<FunWorkSegmentViewDelegate>
 @property (nonatomic,strong) FunWorkSegmentView*    segment;
 @end
 
-@implementation WordViewController
+@implementation EmotionViewController
+
 
 -(instancetype)init{
     self = [super init];
@@ -26,9 +26,10 @@
     return self;
 }
 
+
 -(void)viewDidLoad{
     [super viewDidLoad];
-
+    
     [self loadDefaultSetting];
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"emotion_bg1"]];
@@ -40,13 +41,13 @@
 
 -(void)reloadData{
     if (1 ==  self.type) {
-        self.navigationItem.title = @"流行的颜文字";
+        self.navigationItem.title = @"流行的表情";
     }
     else{
-        self.navigationItem.title = @"最新的颜文字";
+        self.navigationItem.title = @"最新的表情";
     }
     
-    [HttpClient requestDataWithPath:@"/api/font/getWordCategory" paramers:@{@"loadType":[NSString stringWithFormat:@"%ld",self.type]} success:^(id responseObject) {
+    [HttpClient requestDataWithPath:@"/api/font/getIconCategory" paramers:@{@"loadType":[NSString stringWithFormat:@"%ld",self.type]} success:^(id responseObject) {
         NSLog(@"%@",responseObject);
     } failure:^(NSError *error) {
         NSLog(@"%@",error);
@@ -75,5 +76,6 @@
     
     [self reloadData];
 }
+
 
 @end

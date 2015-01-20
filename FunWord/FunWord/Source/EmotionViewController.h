@@ -1,5 +1,5 @@
 //
-//  WordViewController.h
+//  EmotionViewController.h
 //  FunWord
 //
 //  Created by elvis on 15/1/20.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WordViewController : UIViewController
+@interface EmotionViewController : UIViewController
 
 //// 1：流行 2：最新
 @property (nonatomic,assign) NSInteger type;

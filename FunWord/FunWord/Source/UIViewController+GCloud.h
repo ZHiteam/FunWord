@@ -10,9 +10,6 @@
 
 @interface UIViewController (GCloud)
 
-@property (nonatomic,strong) id userInfo;
-
-
 -(UIBarButtonItem*)barItemWithImage:(UIImage*)image target:(id)target selector:(SEL)selector;
 
 -(UIBarButtonItem*)backBarButtonWithTarget:(id)target selector:(SEL)selector;

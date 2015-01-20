@@ -8,10 +8,16 @@
 
 #import "RankingViewController.h"
 #import "WordViewController.h"
+#import "EmotionViewController.h"
 
 @interface RankingViewController ()
 
 @end
+
+typedef enum E_CATAGORY_TYPE{
+    WORD_CATAGORY = -1001,
+    ICON_CATAGORY = -1002
+}CatagotyType;
 
 @implementation RankingViewController
 
@@ -24,40 +30,55 @@
 -(void)loadContent{
     self.navigationItem.title = @"Ranking";
     [self loadDefaultSetting];
+    
+    [self loadButton];
 
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    [self loadRequest];
 }
 
--(void)loadRequest{
-    [HttpClient requestDataWithPath:@"/api/font/getCategory" paramers:nil success:^(id responseObject) {
-        NSLog(@"%@",responseObject);
-        [self praserData:responseObject];
-    } failure:^(NSError *error) {
-        NSLog(@"%@",error);
-    }];
+-(void)loadButton{
+    CGFloat leftSpan = 24;
+    CGFloat span = 16;
+    CGFloat topSpan = 52;
+    
+    CGFloat width = (self.view.width -leftSpan*2-span)/2;
+    CGFloat top = self.navigationController.navigationBar.y+self.navigationController.navigationBar.height;
+    
+    UIImageView* bg = [[UIImageView alloc]initWithFrame:CGRectMake(0, top, self.view.width, 200)];
+    bg.image = [UIImage imageNamed:@"ranking_bt_bg"];
+    
+    [self.view addSubview:bg];
+    
+    UIButton* wordBtn = [[UIButton alloc]initWithFrame:CGRectMake(leftSpan, top+topSpan, width, width)];
+    [wordBtn setImage:[UIImage imageNamed:@"bt_text"] forState:UIControlStateNormal];
+    wordBtn.tag = WORD_CATAGORY;
+    [wordBtn addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:wordBtn];
+    
+    UIButton* iconBtn = [[UIButton alloc]initWithFrame:CGRectMake(leftSpan+span+width, wordBtn.y, width, width)];
+    [iconBtn setImage:[UIImage imageNamed:@"bt_emotion"] forState:UIControlStateNormal];
+    iconBtn.tag = ICON_CATAGORY;
+    [iconBtn addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:iconBtn];
+    
+    UIImageView* roseLine = [[UIImageView alloc]initWithFrame:CGRectMake(0, iconBtn.y+iconBtn.height+12, self.view.width, 24)];
+    roseLine.image = [UIImage imageNamed:@"rose_line"];
+    
+    [self.view addSubview:roseLine];
 }
 
--(void)praserData:(NSDictionary*)data{
-    if (![data isKindOfClass:[NSDictionary class]]) {
-        return;
+-(void)buttonAction:(UIButton*)btn{
+    if (WORD_CATAGORY == btn.tag) {
+        WordViewController* vc = [[WordViewController alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
     }
-    
-    BOOL result = [data[@"result"]boolValue];;
-    
-    if (!result){
-        return;
-    }
-    
-    NSArray* list = data[@"typeList"];
-    if (0 == list.count) {
-        return;
-    }
-    
-    for (int i = 0 ; i < list.count ; ++i) {
-        
+    else{
+        EmotionViewController* vc = [[EmotionViewController alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 
