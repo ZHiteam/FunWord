@@ -8,8 +8,6 @@
 
 #import "UIViewController+GCloud.h"
 #import <objc/runtime.h>
-#import "UMSocialSnsPlatformManager.h"
-#import "UMSocialAccountManager.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 static const void* userInfoKey = &userInfoKey;
@@ -62,7 +60,7 @@ static const void* userInfoKey = &userInfoKey;
 -(void)loadDefaultSetting{
     
     NSDictionary* info = [[NSUserDefaults standardUserDefaults]valueForKey:@"SSO"];
-    if (info) {
+    if (info[@"icon"]) {
         [self updateUserInfo:info];
     }
     else{
@@ -76,42 +74,6 @@ static const void* userInfoKey = &userInfoKey;
 }
 
 -(void)userAction{
-    
-    if ([[NSUserDefaults standardUserDefaults]valueForKey:@"SSO"]) {
-        return;
-    }
-    
-    UMSocialSnsPlatform *snsPlatform = [UMSocialSnsPlatformManager getSocialPlatformWithName:UMShareToSina];
-    
-    snsPlatform.loginClickHandler(self,[UMSocialControllerService defaultControllerService],YES,^(UMSocialResponseEntity *response){
-        //          获取微博用户名、uid、token等
-        
-        if (response.responseCode == UMSResponseCodeSuccess) {
-            UMSocialAccountEntity *snsAccount = [[UMSocialAccountManager socialAccountDictionary] valueForKey:UMShareToSina];
-            
-            NSMutableDictionary* info = [[NSMutableDictionary alloc]initWithCapacity:3];
-            if (snsAccount.userName) {
-                [info setObject:snsAccount.userName forKey:@"name"];
-            }
-            if (snsAccount.usid) {
-                [info setObject:snsAccount.usid forKey:@"usid"];
-            }
-            if (snsAccount.accessToken) {
-                [info setObject:snsAccount.accessToken forKey:@"token"];
-            }
-            if (snsAccount.iconURL) {
-                [info setObject:snsAccount.iconURL forKey:@"icon"];
-            }
-            
-            [[NSUserDefaults standardUserDefaults]setObject:info forKey:@"SSO"];
-            
-            [self updateUserInfo:info];
-        }
-        else{
-        }
-        
-//        [alert show];
-    });
 }
 
 -(void)updateUserInfo:(NSDictionary*)info{
