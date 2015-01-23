@@ -30,6 +30,18 @@
     // Add custom view sizing constraints here
 }
 
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    //solved oritation
+//    [self updateFont];
+//    
+//    // animating somehow reduces some jerkiness
+//    [UIView animateWithDuration:0.0 delay:0.0 options:0 animations:^{
+//        [self layoutViewForSize:self.view.frame.size];
+//    } completion:^(BOOL finished) {}];
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
