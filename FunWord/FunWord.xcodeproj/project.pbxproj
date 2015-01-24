@@ -9,12 +9,7 @@
 /* Begin PBXBuildFile section */
 		25522B26EA6AEC6F4A05FAA4 /* libPods-FunWord.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A64BDF7003DDBCB686607B71 /* libPods-FunWord.a */; };
 		840136CA1A5300DE00CD5635 /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 840136C91A5300DE00CD5635 /* libz.1.dylib */; };
-		840136CE1A5301B600CD5635 /* FWFirstVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 840136CD1A5301B600CD5635 /* FWFirstVC.m */; };
-		840136D11A5301D300CD5635 /* FWSecondVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 840136D01A5301D300CD5635 /* FWSecondVC.m */; };
-		840136D41A5301E400CD5635 /* FWThirdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 840136D31A5301E400CD5635 /* FWThirdVC.m */; };
-		840136D71A53021900CD5635 /* FWFouthVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 840136D61A53021900CD5635 /* FWFouthVC.m */; };
-		840136DB1A53037700CD5635 /* FirstN@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 840136D91A53037700CD5635 /* FirstN@2x.png */; };
-		840136DC1A53037700CD5635 /* FirstS@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 840136DA1A53037700CD5635 /* FirstS@2x.png */; };
+		84180BBF1A73414700BD7F9C /* edit_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84180BBE1A73414700BD7F9C /* edit_bg@2x.png */; };
 		84478A8F1A71549A005BAC49 /* FWEmotionKeyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84478A621A71549A005BAC49 /* FWEmotionKeyView.m */; };
 		84478A901A71549A005BAC49 /* FWEmotionKeyViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84478A641A71549A005BAC49 /* FWEmotionKeyViewCell.m */; };
 		84478A911A71549A005BAC49 /* FWEmotionKeyViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84478A651A71549A005BAC49 /* FWEmotionKeyViewCell.xib */; };
@@ -159,16 +154,7 @@
 		60B180F0B3BCB450C6EED938 /* Pods-FunWord.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunWord.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FunWord/Pods-FunWord.debug.xcconfig"; sourceTree = "<group>"; };
 		840136C81A52FFBD00CD5635 /* FunWord-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FunWord-Prefix.pch"; sourceTree = "<group>"; };
 		840136C91A5300DE00CD5635 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = usr/lib/libz.1.dylib; sourceTree = SDKROOT; };
-		840136CC1A5301B600CD5635 /* FWFirstVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWFirstVC.h; sourceTree = "<group>"; };
-		840136CD1A5301B600CD5635 /* FWFirstVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWFirstVC.m; sourceTree = "<group>"; };
-		840136CF1A5301D300CD5635 /* FWSecondVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWSecondVC.h; sourceTree = "<group>"; };
-		840136D01A5301D300CD5635 /* FWSecondVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWSecondVC.m; sourceTree = "<group>"; };
-		840136D21A5301E400CD5635 /* FWThirdVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWThirdVC.h; sourceTree = "<group>"; };
-		840136D31A5301E400CD5635 /* FWThirdVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWThirdVC.m; sourceTree = "<group>"; };
-		840136D51A53021900CD5635 /* FWFouthVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWFouthVC.h; sourceTree = "<group>"; };
-		840136D61A53021900CD5635 /* FWFouthVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWFouthVC.m; sourceTree = "<group>"; };
-		840136D91A53037700CD5635 /* FirstN@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FirstN@2x.png"; sourceTree = "<group>"; };
-		840136DA1A53037700CD5635 /* FirstS@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FirstS@2x.png"; sourceTree = "<group>"; };
+		84180BBE1A73414700BD7F9C /* edit_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit_bg@2x.png"; sourceTree = "<group>"; };
 		84478A611A71549A005BAC49 /* FWEmotionKeyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWEmotionKeyView.h; sourceTree = "<group>"; };
 		84478A621A71549A005BAC49 /* FWEmotionKeyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWEmotionKeyView.m; sourceTree = "<group>"; };
 		84478A631A71549A005BAC49 /* FWEmotionKeyViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWEmotionKeyViewCell.h; sourceTree = "<group>"; };
@@ -385,6 +371,7 @@
 		840136D81A53037700CD5635 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				84180BBE1A73414700BD7F9C /* edit_bg@2x.png */,
 				9C4247F61A6ECABF004A5D48 /* user_bg@2x.png */,
 				9C0FC1D71A6E574800D1BC15 /* text_bg2@2x.png */,
 				9C0FC1D51A6E568100D1BC15 /* bt_bg@2x.png */,
@@ -848,6 +835,7 @@
 				9C0FC1671A6D407900D1BC15 /* love_off@2x.png in Resources */,
 				9C0FC1D21A6E553000D1BC15 /* bt1_text_on@2x.png in Resources */,
 				9C0FC1A01A6E003400D1BC15 /* bt_new_on@2x.png in Resources */,
+				84180BBF1A73414700BD7F9C /* edit_bg@2x.png in Resources */,
 				9C0FC1661A6D407900D1BC15 /* edit_on@2x.png in Resources */,
 				9C0FC1C81A6E4D8900D1BC15 /* text_bg@2x.png in Resources */,
 				9C0FC1A61A6E084500D1BC15 /* emotion_bg1@2x.png in Resources */,

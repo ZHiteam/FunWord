@@ -9,14 +9,16 @@
 #import "EditViewController.h"
 
 @interface EditViewController ()
-
+@property(nonatomic, strong)UITextView *textView;
+@property(nonatomic, strong)UIImageView *backView;
 @end
 
 @implementation EditViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self.view addSubview:self.backView];
+    [self.view addSubview:self.textView];
     [self loadContent];
 }
 
@@ -24,23 +26,30 @@
     [self loadDefaultSetting];
 }
 
--(void)loadContent{
-    self.navigationItem.title = @"Edit";
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - Getter 
+- (UITextView *)textView {
+    if (_textView == nil) {
+        _textView = [[UITextView alloc] initWithFrame:CGRectMake(20, 75, self.view.frame.size.width - 40, 150)];
+        _textView.font = [UIFont systemFontOfSize:16];
+    }
+    return _textView;
 }
-*/
+- (UIImageView *)backView{
+    if (_backView == nil) {
+        _backView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"edit_bg"]];
+        _backView.frame = CGRectMake(10, 70, self.view.frame.size.width - 20, 160);
+    }
+    return _backView;
+}
+
+#pragma mark - Privte
+-(void)loadContent{
+    self.navigationItem.title = @"Edit";
+}
 
 @end
