@@ -11,6 +11,7 @@
 @interface EditViewController ()
 @property(nonatomic, strong)UITextView *textView;
 @property(nonatomic, strong)UIImageView *backView;
+@property(nonatomic, strong)UIControl   *disappearTextControl;
 @end
 
 @implementation EditViewController
@@ -19,6 +20,7 @@
     [super viewDidLoad];
     [self.view addSubview:self.backView];
     [self.view addSubview:self.textView];
+    [self.view addSubview:self.disappearTextControl];
     [self loadContent];
 }
 
@@ -31,6 +33,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)dissappearAction:(id)sender {
+    [_textView resignFirstResponder];
+}
+
 #pragma mark - Getter 
 - (UITextView *)textView {
     if (_textView == nil) {
@@ -38,6 +44,13 @@
         _textView.font = [UIFont systemFontOfSize:16];
     }
     return _textView;
+}
+- (UIControl *)disappearTextControl {
+    if (!_disappearTextControl) {
+        _disappearTextControl = [[UIControl alloc] initWithFrame:CGRectMake(0, 230, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame))];
+        [_disappearTextControl addTarget:self action:@selector(dissappearAction:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _disappearTextControl;
 }
 - (UIImageView *)backView{
     if (_backView == nil) {
