@@ -20,31 +20,35 @@
 @property(nonatomic,strong)UICollectionView     *collectionView;
 @property(nonatomic,strong)FWKeyboardLayout     *keyboardLayout;
 @property(nonatomic,strong)FWKeyboardManager    *keyboardManager;
+@property(nonatomic,strong)UIView               *landBackView;
 @end
 
 @implementation KeyboardViewController
 
 - (void)updateViewConstraints {
     [super updateViewConstraints];
-    
     // Add custom view sizing constraints here
 }
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    //solved oritation
-//    [self updateFont];
-//    
-//    // animating somehow reduces some jerkiness
-//    [UIView animateWithDuration:0.0 delay:0.0 options:0 animations:^{
-//        [self layoutViewForSize:self.view.frame.size];
-//    } completion:^(BOOL finished) {}];
+    if([UIScreen mainScreen].bounds.size.width < [UIScreen mainScreen].bounds.size.height){
+        //Keyboard is in Portrait
+        self.landBackView.hidden = YES;
+        self.collectionView.hidden = NO;
+    }
+    else{
+        //Keyboard is in Landscape
+        self.landBackView.hidden = NO;
+        self.collectionView.hidden = YES;
+    }
 }
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.view addSubview:self.landBackView];
     [self.view addSubview:self.collectionView];
     self.keyboardManager = [[FWKeyboardManager alloc] init];
     self.keyboardManager.inputVC = self;
@@ -76,6 +80,18 @@
         _keyboardLayout = [[FWKeyboardLayout alloc] init];
     }
     return _keyboardLayout;
+}
+
+- (UIView *)landBackView{
+    if (_landBackView == nil) {
+        _landBackView = [[UIView alloc] initWithFrame:self.view.bounds];
+        _landBackView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_pattern"]];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 40)];
+        label.backgroundColor = [UIColor clearColor];
+        label.text = @"横屏模式暂未支持，敬请期待后续更新。";
+        [_landBackView addSubview:label];
+    }
+    return _landBackView;
 }
 
 #pragma mark - Privte
