@@ -142,7 +142,7 @@
     }else if ([keyValue hasPrefix:@"F7"]) {
         [self.textDocumentProxy deleteBackward];
     }else if ([keyValue hasPrefix:@"F8"]) {//send
-        
+        [self handlerInput:@"\n"];
     }else if ([keyValue hasPrefix:@"F9"]) {//shift
         
     }else if ([keyValue hasPrefix:@"F10"]) {
