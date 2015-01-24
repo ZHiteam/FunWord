@@ -74,6 +74,8 @@ static const void* userInfoKey = &userInfoKey;
 }
 
 -(void)userAction{
+    UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"" message:@"第三方登录" delegate:nil cancelButtonTitle:@"确认" otherButtonTitles: nil];
+    [alert show];
 }
 
 -(void)updateUserInfo:(NSDictionary*)info{

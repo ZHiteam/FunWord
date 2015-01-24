@@ -13,4 +13,5 @@
 @property (nonatomic, retain) NSString * favorite;
 @property (nonatomic, retain) NSString * richWord;
 @property (nonatomic, retain) NSString * wordId;
+@property (nonatomic, retain) NSString * c_id;
 @end

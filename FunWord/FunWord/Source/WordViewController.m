@@ -10,6 +10,7 @@
 #import "FunWorkSegmentView.h"
 #import "WordCatagoryCell.h"
 #import "WordCatagoryHeadCell.h"
+#import "WordCatagoryModel.h"
 
 @interface WordViewController()<FunWorkSegmentViewDelegate,UITableViewDataSource,UITableViewDelegate>
 
@@ -17,7 +18,7 @@
 @property (nonatomic,assign) int32_t type;
 @property (nonatomic,strong) FunWorkSegmentView*    segment;
 @property (nonatomic,strong) UITableView*           contentTable;
-@property (nonatomic,strong) NSArray*               data;
+@property (nonatomic,strong) WordCatagoryModel*               data;
 @end
 
 @implementation WordViewController
@@ -96,18 +97,27 @@
 }
 
 -(void)praserData:(NSDictionary* )data{
-    self.data = @[@"开心",@"滑稽"];
-    [self.contentTable reloadData];
+//    self.data = @[@"开心",@"滑稽"];
+    if (data[@"popularList"]) {
+        WordCatagoryModel* model = [WordCatagoryModel praserModelWithInfo:data[@"popularList"]];
+        self.data = model;
+        [self.contentTable reloadData];
+    }
+
 }
 
 #pragma -mark UITableViewDataSource
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-#warning TEST
-    return 5;
+    if (self.data.childTitles.count <= section) {
+        return 0;
+    }
+    WordCatagoryModel* model = self.data.childTitles[section];
+    
+    return model.childTitles.count/2+model.childTitles.count%2;
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return self.data.count;
+    return self.data.childTitles.count;
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -120,7 +130,9 @@
             head = [[WordCatagoryHeadCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:headIdentifier width:tableView.width];
         }
         
-        [head setLabelTitle:self.data[indexPath.section]];
+        WordCatagoryModel* model = self.data.childTitles[indexPath.section];
+        
+        [head setLabelTitle:model.name];
         
         cell = head;
     }
@@ -137,12 +149,19 @@
             bgImage = @"text_bt_bg2";
         }
         
-        CatagoryModel* model = [[CatagoryModel alloc]init];
-        model.name = @"兴奋";
-        model.catagoryId = @"7";
-        model.loadType = [NSString stringWithFormat:@"%d",self.type];
-        
-        [word reloadCatagory:model another:model bgImage:[UIImage imageNamed:bgImage]];
+        WordCatagoryModel* model = self.data.childTitles[indexPath.section];
+        if (indexPath.row < model.childTitles.count) {
+            CatagoryModel* cModel = model.childTitles[indexPath.row];
+            cModel.loadType = [NSString stringWithFormat:@"%d",self.type];
+            
+            CatagoryModel* anotherModel = nil;
+            if (indexPath.row+1 < model.childTitles.count) {
+                anotherModel = model.childTitles[indexPath.row+1];
+                anotherModel.loadType = [NSString stringWithFormat:@"%d",self.type];
+            }
+            
+            [word reloadCatagory:cModel another:anotherModel bgImage:[UIImage imageNamed:bgImage]];
+        }
         
         cell = word;
     }
@@ -152,7 +171,7 @@
 }
 
 -(UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
-    if (section == self.data.count-1) {
+    if (section == self.data.childTitles.count-1) {
         return nil;
     }
     
@@ -166,7 +185,7 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    if (section == self.data.count -1) {
+    if (section == self.data.childTitles.count -1) {
         return 0;
     }
     return 24;

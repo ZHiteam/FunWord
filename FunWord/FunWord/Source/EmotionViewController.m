@@ -8,13 +8,16 @@
 
 #import "EmotionViewController.h"
 #import "FunWorkSegmentView.h"
+#import "EmotionModel.h"
+#import "EmotionCatagoryCell.h"
 
-@interface EmotionViewController()<FunWorkSegmentViewDelegate>
+@interface EmotionViewController()<FunWorkSegmentViewDelegate,UITableViewDataSource,UITableViewDelegate>
 
 //// 1：流行 2：最新
 @property (nonatomic,assign) int32_t type;
 @property (nonatomic,strong) FunWorkSegmentView*    segment;
 @property (nonatomic,strong) UITableView*           contentTable;
+@property (nonatomic,strong) EmotionModel*          data;
 @end
 
 @implementation EmotionViewController
@@ -66,11 +69,39 @@
         _contentTable.showsVerticalScrollIndicator = NO;
         _contentTable.separatorStyle = UITableViewCellSeparatorStyleNone;
         _contentTable.backgroundColor = [UIColor clearColor];
-//        _contentTable.delegate      = self;
-//        _contentTable.dataSource    = self;
+        _contentTable.delegate      = self;
+        _contentTable.dataSource    = self;
     }
     
     return _contentTable;
+}
+#pragma -mark tableview
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.data.childTitles.count/2+self.data.childTitles.count%2;
+}
+
+-(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString* identify = @"emotionCell";
+    EmotionCatagoryCell* cell = [tableView dequeueReusableCellWithIdentifier:identify];
+    if (!cell) {
+        cell = [[EmotionCatagoryCell alloc]initWithWidth:tableView.width reuseIdentifier:identify catagory:nil another:nil];
+    }
+    
+    if (indexPath.row < self.data.childTitles.count) {
+        EmotionModel* model = self.data.childTitles[indexPath.row];
+        EmotionModel* another = nil;
+        if (indexPath.row+1 <  self.data.childTitles.count) {
+            another = self.data.childTitles[indexPath.row+1];
+        }
+        
+        [cell reloadCatagory:model another:another];
+    }
+    
+    return cell;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return [EmotionCatagoryCell cellHeight];
 }
 
 #pragma -mark load data
@@ -87,13 +118,17 @@
     
     [HttpClient requestDataWithPath:@"/api/font/getIconCategory" paramers:dic success:^(id responseObject) {
         NSLog(@"%@",responseObject);
+        [self praserData:responseObject];
     } failure:^(NSError *error) {
         NSLog(@"%@",error);
     }];
 }
 
 -(void)praserData:(NSDictionary* )data{
-    
+    if (data[@"popularList"]) {
+        self.data = [EmotionModel praserModelWithInfo:data[@"popularList"]];
+    }
+    [self.contentTable reloadData];
 }
 
 #pragma -mark FunWorkSegmentViewDelegate

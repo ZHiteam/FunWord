@@ -42,7 +42,7 @@
 -(WordTableView *)contentTable{
     
     if (!_contentTable) {
-        CGFloat top = 0;///self.navigationController.navigationBar.y+self.navigationController.navigationBar.height;
+        CGFloat top = 0;
         CGFloat height = self.view.height - top-self.tabBarController.tabBar.height;
         
         _contentTable = [[WordTableView alloc]initWithFrame:CGRectMake(0, top, self.view.width, height)];
@@ -50,6 +50,7 @@
     
     return _contentTable;
 }
+
 
 #pragma -mark load data
 -(void)requestWithModel:(CatagoryModel*)model{
@@ -70,7 +71,14 @@
     [HttpClient requestDataWithPath:@"/api/font/getWordList" paramers:dic success:^(id responseObject) {
         NSLog(@"%@",responseObject);
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
-            [self praserData:responseObject];
+            if (![responseObject[@"result"]boolValue]) {
+
+                UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"" message:@"服务器异常" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil];
+                [alert show];
+            }
+            else{
+                [self praserData:responseObject];
+            }
         }
     } failure:^(NSError *error) {
         

@@ -22,6 +22,7 @@
     model.favorite      = VALIDATE_VALUE(dic[@"favorite"]);
     model.richWord      = VALIDATE_VALUE(dic[@"richWord"]);
     model.wordId        = VALIDATE_VALUE(dic[@"wordId"]);
+    model.c_id          = VALIDATE_VALUE(dic[@"id"]);
     
     return model;
 }
