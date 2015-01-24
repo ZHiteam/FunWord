@@ -300,6 +300,8 @@
 		9C3830261A729C6C00C744FB /* EmotionCatagoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmotionCatagoryViewController.m; sourceTree = "<group>"; };
 		9C3830281A729DA600C744FB /* emotion_title_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "emotion_title_bg@2x.png"; sourceTree = "<group>"; };
 		9C3830291A729DA600C744FB /* emotion1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "emotion1@2x.png"; sourceTree = "<group>"; };
+		9C38302C1A73EA8C00C744FB /* FunWord.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = FunWord.entitlements; sourceTree = "<group>"; };
+		9C38302D1A73EB5A00C744FB /* FunWordKeyboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = FunWordKeyboard.entitlements; sourceTree = "<group>"; };
 		9C4247F61A6ECABF004A5D48 /* user_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user_bg@2x.png"; sourceTree = "<group>"; };
 		9C4248281A6F5B62004A5D48 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		9C42482A1A6F5B6B004A5D48 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -510,6 +512,7 @@
 		84F23BB21A466CC90084F122 /* FunWord */ = {
 			isa = PBXGroup;
 			children = (
+				9C38302C1A73EA8C00C744FB /* FunWord.entitlements */,
 				9C3BAA471A6EAEA30005621C /* Library */,
 				840136D81A53037700CD5635 /* Resource */,
 				840136CB1A53018A00CD5635 /* Source */,
@@ -552,6 +555,7 @@
 		84F23BDE1A466CED0084F122 /* FunWordKeyboard */ = {
 			isa = PBXGroup;
 			children = (
+				9C38302D1A73EB5A00C744FB /* FunWordKeyboard.entitlements */,
 				84478A601A71549A005BAC49 /* KeyboardSource */,
 				84478A7D1A71549A005BAC49 /* KeyboardResource */,
 				84F23BE11A466CED0084F122 /* KeyboardViewController.h */,
@@ -742,6 +746,11 @@
 					84F23BAF1A466CC90084F122 = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = 3R4K7E9589;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					84F23BC81A466CC90084F122 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -750,6 +759,11 @@
 					84F23BDC1A466CED0084F122 = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = 3R4K7E9589;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -1061,7 +1075,9 @@
 			baseConfigurationReference = 60B180F0B3BCB450C6EED938 /* Pods-FunWord.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FunWord/FunWord.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREFIX_HEADER = "FunWord/FunWord-Prefix.pch";
 				INFOPLIST_FILE = FunWord/Info.plist;
@@ -1080,7 +1096,9 @@
 			baseConfigurationReference = 201D0E9A244D85177962D227 /* Pods-FunWord.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: lu ye (3R4K7E9589)";
+				CODE_SIGN_ENTITLEMENTS = FunWord/FunWord.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREFIX_HEADER = "FunWord/FunWord-Prefix.pch";
 				INFOPLIST_FILE = FunWord/Info.plist;
@@ -1132,8 +1150,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = armv7s;
-				CODE_SIGN_IDENTITY = "iPhone Developer: lu ye (FD78BG9MG9)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: lu ye (FD78BG9MG9)";
+				CODE_SIGN_ENTITLEMENTS = FunWordKeyboard/FunWordKeyboard.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1152,8 +1171,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = armv7s;
-				CODE_SIGN_IDENTITY = "iPhone Developer: lu ye (FD78BG9MG9)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: lu ye (3R4K7E9589)";
+				CODE_SIGN_ENTITLEMENTS = FunWordKeyboard/FunWordKeyboard.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FunWordKeyboard/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -1206,7 +1226,9 @@
 			baseConfigurationReference = 201D0E9A244D85177962D227 /* Pods-FunWord.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: lu ye (3R4K7E9589)";
+				CODE_SIGN_ENTITLEMENTS = FunWord/FunWord.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREFIX_HEADER = "FunWord/FunWord-Prefix.pch";
 				INFOPLIST_FILE = FunWord/Info.plist;
@@ -1238,8 +1260,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = armv7s;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: lu ye (3R4K7E9589)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: lu ye (3R4K7E9589)";
+				CODE_SIGN_ENTITLEMENTS = FunWordKeyboard/FunWordKeyboard.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FunWordKeyboard/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";

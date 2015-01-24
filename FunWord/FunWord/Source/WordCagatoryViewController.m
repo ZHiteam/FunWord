@@ -61,7 +61,7 @@
     NSMutableDictionary* dic = [[NSMutableDictionary alloc]initWithCapacity:2];
     
     if (model.catagoryId) {
-        [dic setObject:model.catagoryId forKey:@"categoryId"];
+        [dic setObject:model.modelId forKey:@"categoryId"];
     }
     if (model.loadType) {
         [dic setObject:model.loadType forKey:@"loadType"];
