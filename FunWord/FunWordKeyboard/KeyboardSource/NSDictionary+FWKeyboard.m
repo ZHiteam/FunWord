@@ -3,7 +3,18 @@
 #import "NSDictionary+FWKeyboard.h"
 
 
+
 @implementation NSDictionary(FWKeyboard)
+
+- (float)scale{
+    static float scaleRate = 1.0;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        float min = MIN([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
+        scaleRate = min / 320.0;
+    });
+    return scaleRate;
+}
 
 - (BOOL)boolForKey:(NSString *)keyName
 {
@@ -43,6 +54,10 @@
     {
         ret = CGRectMake([[componets objectAtIndex:0] intValue], [[componets objectAtIndex:1] intValue], 
 						 [[componets objectAtIndex:2] intValue], [[componets objectAtIndex:3] intValue]);
+        float scale = [self scale];
+        if (scale != 1.0) {
+            ret = CGRectMake(ret.origin.x * scale , ret.origin.y, ret.size.width * scale, ret.size.height);
+        }
     }
     
     return ret;
