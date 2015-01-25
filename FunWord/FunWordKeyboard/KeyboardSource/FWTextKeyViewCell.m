@@ -25,19 +25,26 @@
 
 - (void)awakeFromNib {
     // Initialization code
-    self.bottomLine.frame = CGRectMake(0, self.frame.size.height-0.5, self.frame.size.width, 0.5);
+    CGFloat width = [[UIScreen mainScreen] bounds].size.width;
+    self.bottomLine.frame = CGRectMake(0, self.frame.size.height-0.5, width, 0.5);
     self.bottomLine.backgroundColor = [UIColor colorWithRed:158/255.0 green:129/255.0 blue:102/255.0 alpha:1.0];
     UIColor *color = [UIColor colorWithRed:174/255.0 green:150/255.0 blue:126/255.0 alpha:1.0];
     self.seperateLine1.backgroundColor = color;
     self.seperateLine2.backgroundColor = color;
     self.seperateLine3.backgroundColor = color;
-    self.seperateLine1.frame = CGRectMake(roundf(self.frame.size.width/4.0),   0, 0.5, self.frame.size.height);
-    self.seperateLine2.frame = CGRectMake(roundf(self.frame.size.width/4.0)*2, 0, 0.5, self.frame.size.height);
-    self.seperateLine3.frame = CGRectMake(roundf(self.frame.size.width/4.0)*3, 0, 0.5, self.frame.size.height);
+    self.seperateLine1.frame = CGRectMake(roundf(width/4.0),   0, 0.5, self.frame.size.height);
+    self.seperateLine2.frame = CGRectMake(roundf(width/4.0)*2, 0, 0.5, self.frame.size.height);
+    self.seperateLine3.frame = CGRectMake(roundf(width/4.0)*3, 0, 0.5, self.frame.size.height);
     [self configureLabelSeleted:self.textLebel1];
     [self configureLabelSeleted:self.textLabel2];
     [self configureLabelSeleted:self.textLabel3];
     [self configureLabelSeleted:self.textLabel4];
+    
+    self.textLebel1.frame = CGRectMake(0, 0, roundf(width/4.0), self.frame.size.height);
+    self.textLabel2.frame = CGRectMake(roundf(width/4.0), 0, roundf(width/4.0), self.frame.size.height);
+    self.textLabel3.frame = CGRectMake(roundf(width/4.0)*2, 0, roundf(width/4.0), self.frame.size.height);
+    self.textLabel4.frame = CGRectMake(roundf(width/4.0)*3, 0, roundf(width/4.0), self.frame.size.height);
+
 }
 
 - (void)configureWithContents:(NSArray*)contents{
@@ -46,7 +53,6 @@
         UILabel *label = [labels objectAtIndex:index];
         label.text = [contents objectAtIndex:index];
     }
-
 }
 
 

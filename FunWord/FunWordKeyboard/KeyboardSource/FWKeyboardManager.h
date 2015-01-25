@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "FWKeyboardConst.h"
 
 typedef NS_OPTIONS(NSUInteger, FWBackStyle) {
     FWBackStyle1=1,
@@ -40,10 +41,13 @@ typedef NS_OPTIONS(NSUInteger, FWKeyboardType) {
 @interface FWTextKeyboard : FWKeyboard
 @property(nonatomic, strong)NSArray *categoryItems; //@[@"开心",@"最近"]
 @property(nonatomic, strong)NSArray *contentItems;  //@[@[@"^_^",@"^_^",@"^_^"],@[@"^_^",@"^_^",@"^_^"]]
+- (void)loadTextWithCategory:(NSString*)category pageNumber:(NSInteger)pageNumber ;
 @end
 
 @interface FWEmotionKeyboard : FWKeyboard
 @property(nonatomic, strong)NSArray *emotionItems;
+- (void)loadEmotionWithCompletionBlock:(FWCompletionBlock)completionBlock;
+
 @end
 
 
@@ -57,5 +61,5 @@ typedef NS_OPTIONS(NSUInteger, FWKeyboardType) {
 /////////////////////////////////////////////////////////////////////////
 - (BOOL)handlerWithKey:(NSString*)keyValue;
 - (BOOL)isDeleteBackKey:(NSString*)keyValue;
-
+- (BOOL)isOpenAccessGranted;
 @end

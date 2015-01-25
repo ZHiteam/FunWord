@@ -69,6 +69,21 @@
     }
     return self;
 }
+
+- (void)loadTextWithCategory:(NSString*)category pageNumber:(NSInteger)pageNumber {
+    //NSDictionary* dic = [NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"%d",self.type] forKey:@"loadType"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://ad.meimotuan.com/api/font/getKeyBoardWordList"]];
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        NSLog(@">>>%@ %@",response,data);
+    }];
+    
+//    [HttpClient requestDataWithPath:@"/api/font/getKeyBoardWordList" paramers:nil success:^(id responseObject) {
+//        NSLog(@"%@",responseObject);
+//    } failure:^(NSError *error) {
+//        NSLog(@"%@",error);
+//    }];
+}
+
 @end
 
 @implementation FWEmotionKeyboard
@@ -79,6 +94,20 @@
     }
     return self;
 }
+
+- (void)loadEmotionWithCompletionBlock:(FWCompletionBlock)completionBlock{
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://ad.meimotuan.com/api/font/getKeyBoardIconList"]];
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        NSLog(@">>>%@ %@",response,data);
+    }];
+    
+//    [HttpClient requestDataWithPath:@"/api/font/getKeyBoardIconList" paramers:nil success:^(id responseObject) {
+//        NSLog(@"%@",responseObject);
+//    } failure:^(NSError *error) {
+//        NSLog(@"%@",error);
+//    }];
+}
+
 @end
 
 @interface FWKeyboardManager()
@@ -163,6 +192,21 @@
     return NO;
 }
 
+//http://stackoverflow.com/questions/25472388/how-to-check-the-allow-full-access-is-enabled-in-ios-8
+-(BOOL)isOpenAccessGranted{
+    NSError *err = nil;
+    NSFileManager *fm = [NSFileManager defaultManager];
+    NSString *containerPath = [[fm containerURLForSecurityApplicationGroupIdentifier:@"group.funword"] path];
+    [fm contentsOfDirectoryAtPath:containerPath error:&err];
+    
+    if(err != nil){
+        NSLog(@"Full Access: Off");
+        return NO;
+    }
+    
+    NSLog(@"Full Access On");
+    return YES;
+}
 
 #pragma mark - Privte
 - (NSString*)fullPathWithKeyboard:(NSString*)keyboardName{
