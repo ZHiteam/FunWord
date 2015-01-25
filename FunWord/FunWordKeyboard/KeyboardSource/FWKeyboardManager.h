@@ -41,11 +41,14 @@ typedef NS_OPTIONS(NSUInteger, FWKeyboardType) {
 @interface FWTextKeyboard : FWKeyboard
 @property(nonatomic, strong)NSArray *categoryItems; //@[@"开心",@"最近"]
 @property(nonatomic, strong)NSArray *contentItems;  //@[@[@"^_^",@"^_^",@"^_^"],@[@"^_^",@"^_^",@"^_^"]]
-- (void)loadTextWithCategory:(NSString*)category pageNumber:(NSInteger)pageNumber ;
+- (void)loadTextWithCompletionBlock:(FWCompletionBlock)completionBlock;
+- (void)addRecentText:(NSString*)text;
+//- (void)loadTextWithCategory:(NSString*)category pageNumber:(NSInteger)pageNumber ;
 @end
 
 @interface FWEmotionKeyboard : FWKeyboard
 @property(nonatomic, strong)NSArray *emotionItems;
+@property(nonatomic, strong)NSArray *emotionImages;
 - (void)loadEmotionWithCompletionBlock:(FWCompletionBlock)completionBlock;
 
 @end
@@ -61,5 +64,5 @@ typedef NS_OPTIONS(NSUInteger, FWKeyboardType) {
 /////////////////////////////////////////////////////////////////////////
 - (BOOL)handlerWithKey:(NSString*)keyValue;
 - (BOOL)isDeleteBackKey:(NSString*)keyValue;
-- (BOOL)isOpenAccessGranted;
++ (BOOL)isOpenAccessGranted;
 @end

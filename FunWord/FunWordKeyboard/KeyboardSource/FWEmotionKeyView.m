@@ -17,7 +17,9 @@
 @interface FWEmotionKeyView ()<UITableViewDelegate, UITableViewDataSource>
 @property(nonatomic, strong)UITableView        *tableView;
 @property(nonatomic, strong)NSArray            *emotionItems;
-@property (strong, nonatomic)UIView            *seperateLine;
+@property(strong, nonatomic)UIView             *seperateLine;
+@property(nonatomic, strong)UILabel                     *openAccessLabel;
+
 @end
 
 @implementation FWEmotionKeyView
@@ -29,6 +31,9 @@
         [self addSubview:self.tableView];
         [self addSubview:self.seperateLine];
         [self.tableView registerNib:[UINib nibWithNibName:@"FWEmotionKeyViewCell" bundle:nil] forCellReuseIdentifier:@"FWEmotionKeyViewCell"];
+        if (![FWKeyboardManager isOpenAccessGranted]) {
+            [self addSubview:self.openAccessLabel];
+        }
     }
     return self;
 }
@@ -63,6 +68,16 @@
         _seperateLine.backgroundColor = [UIColor colorWithRed:174/255.0 green:150/255.0 blue:126/255.0 alpha:1.0];
     }
     return _seperateLine;
+}
+
+- (UILabel *)openAccessLabel{
+    if (_openAccessLabel == nil) {
+        _openAccessLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 40)];
+        _openAccessLabel.backgroundColor = [UIColor yellowColor];
+        _openAccessLabel.numberOfLines = 0;
+        _openAccessLabel.text = @"通过 设置>通用>键盘>呆萌输入法 中打开 完全访问 才可使用该功能";
+    }
+    return _openAccessLabel;
 }
 
 #pragma mark - Privte

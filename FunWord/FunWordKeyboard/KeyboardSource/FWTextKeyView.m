@@ -9,6 +9,7 @@
 #import "FWTextKeyView.h"
 #import "HMSegmentedControl.h"
 #import "FWTextKeyViewCell.h"
+#import "FWKeyboardManager.h"
 
 #define RGBA(r, g, b, a)   [UIColor colorWithRed : r / 255.0f green : g / 255.0f blue : b / 255.0f alpha : a]
 #define RGB(r, g, b)        RGBA(r, g, b, 1.0f)
@@ -22,6 +23,7 @@
 @property (strong, nonatomic)UIView                     *seperateLine;
 @property(nonatomic, strong)UISwipeGestureRecognizer    *rightSwipeGestureRecognizer;
 @property(nonatomic, strong)UISwipeGestureRecognizer    *leftSwipeGestureRecognizer;
+@property(nonatomic, strong)UILabel                     *openAccessLabel;
 @end
 
 @implementation FWTextKeyView
@@ -40,6 +42,9 @@
         self.leftSwipeGestureRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
         [self addGestureRecognizer:self.rightSwipeGestureRecognizer];
         [self addGestureRecognizer:self.leftSwipeGestureRecognizer];
+        if (![FWKeyboardManager isOpenAccessGranted]) {
+            [self addSubview:self.openAccessLabel];
+        }
     }
     return self;
 }
@@ -101,6 +106,16 @@
         _seperateLine.backgroundColor = [UIColor colorWithRed:174/255.0 green:150/255.0 blue:126/255.0 alpha:1.0];
     }
     return _seperateLine;
+}
+
+- (UILabel *)openAccessLabel{
+    if (_openAccessLabel == nil) {
+        _openAccessLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, self.segmentedControl.frame.size.height, self.frame.size.width, 40)];
+        _openAccessLabel.backgroundColor = [UIColor yellowColor];
+        _openAccessLabel.numberOfLines = 0;
+        _openAccessLabel.text = @"通过 设置>通用>键盘>呆萌输入法 中打开 完全访问 才可使用该功能";
+    }
+    return _openAccessLabel;
 }
 
 #pragma mark - Privte
@@ -174,7 +189,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *CellIdentifier = @"FWTextKeyViewCell";
-    
     FWTextKeyViewCell *cell = (FWTextKeyViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     cell.handleBlock = self.handleBlock;
     NSArray *contents  = [self.keyboard.contentItems objectAtIndex:self.currentSeleted];

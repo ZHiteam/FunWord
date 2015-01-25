@@ -47,8 +47,6 @@
     [self configureLabelSeleted:self.label2];
     [self configureLabelSeleted:self.label3];
     [self configureLabelSeleted:self.label4];
-
-    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
