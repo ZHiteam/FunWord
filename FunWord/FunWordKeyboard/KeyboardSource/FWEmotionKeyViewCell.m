@@ -34,13 +34,13 @@
     
     CGFloat width = [[UIScreen mainScreen] bounds].size.width;
     
-    self.imageView1.frame = CGRectMake(0, 8, roundf(width/4.0), 56);
+    self.imageView1.frame = CGRectMake(8, 8, roundf(width/4.0)-16, 56);
     self.label1.frame = CGRectMake(0, 64, roundf(width/4.0), 14);
-    self.imageView2.frame = CGRectMake(roundf(width/4.0), 8, roundf(width/4.0), 56);
+    self.imageView2.frame = CGRectMake(roundf(width/4.0)+8, 8, roundf(width/4.0)-16, 56);
     self.label2.frame = CGRectMake(roundf(width/4.0), 64, roundf(width/4.0), 14);
-    self.imageView3.frame = CGRectMake(roundf(width/4.0)*2, 8, roundf(width/4.0), 56);
+    self.imageView3.frame = CGRectMake(roundf(width/4.0)*2+8, 8, roundf(width/4.0)-16, 56);
     self.label3.frame = CGRectMake(roundf(width/4.0)*2, 64, roundf(width/4.0), 14);
-    self.imageView4.frame = CGRectMake(roundf(width/4.0)*3, 8, roundf(width/4.0), 56);
+    self.imageView4.frame = CGRectMake(roundf(width/4.0)*3+8, 8, roundf(width/4.0)-16, 56);
     self.label4.frame = CGRectMake(roundf(width/4.0)*3, 64, roundf(width/4.0), 14);
     
     [self configureLabelSeleted:self.label1];
