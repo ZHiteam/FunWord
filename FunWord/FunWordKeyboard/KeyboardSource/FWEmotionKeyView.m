@@ -8,6 +8,7 @@
 
 #import "FWEmotionKeyView.h"
 #import "FWEmotionKeyViewCell.h"
+#import "UIImageView+WebCache.h"
 
 #define RGBA(r, g, b, a)   [UIColor colorWithRed : r / 255.0f green : g / 255.0f blue : b / 255.0f alpha : a]
 #define RGB(r, g, b)        RGBA(r, g, b, 1.0f)
@@ -92,7 +93,9 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [self.keyboard.emotionItems  count]/4;
+    NSInteger count = [self.keyboard.emotionItems count];
+    NSInteger row = count/4 + 1;
+    return row;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -115,6 +118,23 @@
         [array addObject:ObjectAtIndex(contents,index+3)];
     }
     [cell configureWithContents:array];
+    NSArray *images  = self.keyboard.emotionImages;
+    NSString*imageURL= ObjectAtIndex(images,index);
+    if (imageURL) {
+        [cell.imageView1 setImageWithURL:[NSURL URLWithString:imageURL]];
+    }
+    imageURL= ObjectAtIndex(images,index+1);
+    if (imageURL) {
+        [cell.imageView2 setImageWithURL:[NSURL URLWithString:imageURL]];
+    }
+    imageURL= ObjectAtIndex(images,index+2);
+    if (imageURL) {
+        [cell.imageView3 setImageWithURL:[NSURL URLWithString:imageURL]];
+    }
+    imageURL= ObjectAtIndex(images,index+3);
+    if (imageURL) {
+        [cell.imageView4 setImageWithURL:[NSURL URLWithString:imageURL]];
+    }
     return cell;
 }
 

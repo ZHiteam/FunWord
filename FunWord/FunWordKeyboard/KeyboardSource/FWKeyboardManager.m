@@ -100,9 +100,14 @@
 }
 
 - (void)addRecentText:(NSString*)text{
+    return;
     if ([text  length] >0) {
         NSMutableArray *result = [self.contentItems mutableCopy];
-        NSMutableArray *mutArray = [self.contentItems objectAtIndex:0];
+        NSArray * items = [self.contentItems objectAtIndex:0];
+        NSMutableArray *mutArray = [NSMutableArray arrayWithArray:items];
+        if (mutArray == nil) {
+            mutArray = [NSMutableArray arrayWithCapacity:0];
+        }
         [mutArray addObject:text];
         [result replaceObjectAtIndex:0 withObject:mutArray];
         self.contentItems = [result copy];
@@ -249,6 +254,7 @@
 - (void)changedKeyboard:(FWKeyboardType)keyboardType{
     NSString *name = [self.keyboardNames objectAtIndex:keyboardType];
     self.currentKeyboard = [self.keyboards objectForKey:name];
+    self.currentType     = keyboardType;
 }
 
 - (BOOL)handlerWithKey:(NSString*)keyValue{
@@ -296,7 +302,7 @@
 }
 
 //http://stackoverflow.com/questions/25472388/how-to-check-the-allow-full-access-is-enabled-in-ios-8
--(BOOL)isOpenAccessGranted{
++ (BOOL)isOpenAccessGranted{    
     NSError *err = nil;
     NSFileManager *fm = [NSFileManager defaultManager];
     NSString *containerPath = [[fm containerURLForSecurityApplicationGroupIdentifier:@"group.funword"] path];

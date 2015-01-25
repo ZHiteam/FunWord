@@ -44,7 +44,11 @@
     self.textLabel2.frame = CGRectMake(roundf(width/4.0), 0, roundf(width/4.0), self.frame.size.height);
     self.textLabel3.frame = CGRectMake(roundf(width/4.0)*2, 0, roundf(width/4.0), self.frame.size.height);
     self.textLabel4.frame = CGRectMake(roundf(width/4.0)*3, 0, roundf(width/4.0), self.frame.size.height);
-
+    
+    self.textLebel1.text = @"";
+    self.textLabel2.text = @"";
+    self.textLabel3.text = @"";
+    self.textLabel4.text = @"";
 }
 
 - (void)configureWithContents:(NSArray*)contents{

@@ -10,6 +10,11 @@
 #import "FWKeyboardConst.h"
 
 @interface FWEmotionKeyViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *imageView1;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView2;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView3;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView4;
+
 @property(nonatomic, copy)FWHandlerKeyBlock handleBlock;
 - (void)configureWithContents:(NSArray*)contents;
 + (float)height;

@@ -11,10 +11,6 @@
 
 
 @interface FWEmotionKeyViewCell ()
-@property (weak, nonatomic) IBOutlet UIImageView *imageView1;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView2;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView3;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView4;
 @property (weak, nonatomic) IBOutlet UILabel *label1;
 @property (weak, nonatomic) IBOutlet UILabel *label2;
 @property (weak, nonatomic) IBOutlet UILabel *label3;
@@ -47,6 +43,15 @@
     [self configureLabelSeleted:self.label2];
     [self configureLabelSeleted:self.label3];
     [self configureLabelSeleted:self.label4];
+    
+    self.label1.text = @"";
+    self.label2.text = @"";
+    self.label3.text = @"";
+    self.label4.text = @"";
+    self.imageView1.image = nil;
+    self.imageView2.image = nil;
+    self.imageView3.image = nil;
+    self.imageView4.image = nil;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

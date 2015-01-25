@@ -184,7 +184,9 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [[self.keyboard.contentItems objectAtIndex:self.currentSeleted] count]/4;
+    NSInteger count = [[self.keyboard.contentItems objectAtIndex:self.currentSeleted] count];
+    NSInteger row = count/4 + 1;
+    return row;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{

@@ -61,7 +61,7 @@
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.86274509803921573" green="0.83529411764705885" blue="0.81176470588235294" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
-                <outlet property="imageView1" destination="Lof-wN-dOL" id="6zV-hH-T10"/>
+                <outlet property="imageView1" destination="Lof-wN-dOL" id="jK2-Cy-Srz"/>
                 <outlet property="imageView2" destination="QMr-ue-c1b" id="3mo-gg-m52"/>
                 <outlet property="imageView3" destination="Tqx-ud-LRV" id="kbE-Pj-hF9"/>
                 <outlet property="imageView4" destination="fS4-8e-7QN" id="sB1-Nv-eFA"/>
