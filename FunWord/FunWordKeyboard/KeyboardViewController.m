@@ -12,6 +12,8 @@
 #import "FWKeyboardManager.h"
 #import "FWTextKeyView.h"
 #import "FWEmotionKeyView.h"
+#import "FWHintView.h"
+#import "UIView+FETouchBlocks.h"
 
 #define kDefaultCell        @"DefaultCell"
 #define kDefaultKeyView     @"DefaultKeyView"
@@ -21,6 +23,7 @@
 @property(nonatomic,strong)FWKeyboardLayout     *keyboardLayout;
 @property(nonatomic,strong)FWKeyboardManager    *keyboardManager;
 @property(nonatomic,strong)UIView               *landBackView;
+@property(nonatomic,strong)NSTimer              *timer;
 @end
 
 @implementation KeyboardViewController
@@ -32,6 +35,8 @@
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
+    self.collectionView.frame = self.view.bounds;
+    self.landBackView.frame   = self.view.bounds;
     if([UIScreen mainScreen].bounds.size.width < [UIScreen mainScreen].bounds.size.height){
         //Keyboard is in Portrait
         self.landBackView.hidden = YES;
@@ -86,9 +91,9 @@
     if (_landBackView == nil) {
         _landBackView = [[UIView alloc] initWithFrame:self.view.bounds];
         _landBackView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_pattern"]];
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 40)];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 40)];
         label.backgroundColor = [UIColor clearColor];
-        label.text = @"横屏模式暂未支持，敬请期待后续更新。";
+        label.text = @" 横屏模式暂未支持，敬请期待后续更新。";
         [_landBackView addSubview:label];
     }
     return _landBackView;
@@ -106,6 +111,10 @@
         self.keyboardLayout.keyItems = self.keyboardManager.currentKeyboard.keyItems;
         [self.collectionView reloadData];
     }
+}
+
+- (void)handleDeleteBackward{
+    [self.textDocumentProxy deleteBackward];
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -142,16 +151,32 @@
         FWKeyView *keyView  = [collectionView dequeueReusableCellWithReuseIdentifier:[FWKeyView reuseIdentifier] forIndexPath:indexPath];
         [keyView setBackStyle:key.backStyle];
         [keyView setShowText:key.value];
+        
+        __weak typeof(self)       weakSelf = self;
+        __weak typeof(keyView) weakKeyView = keyView;
+        [keyView touchBeganBlock:^(NSSet *touches, UIEvent *event) {
+            if ([weakSelf.keyboardManager  isDeleteBackKey:weakKeyView.keyValue]) {
+                [weakSelf handleDeleteBackward];
+                weakSelf.timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(handleDeleteBackward) userInfo:nil repeats:YES];
+            }
+            //CGPoint pt = CGPointMake(CGRectGetMidX(weakKeyView.frame), CGRectGetMidY(weakKeyView.frame));
+            //[FWHintView showInView:[weakSelf.view window] style:FWHintViewType1 point:pt text:keyView.keyValue];
+        }];
+        [keyView touchCancelledBlock:^(NSSet *touches, UIEvent *event) {
+            //[FWHintView dismiss];
+            [weakSelf.timer invalidate];
+            weakSelf.timer = nil;
+        }];
+        [keyView touchEndedBlock:^(NSSet *touches, UIEvent *event) {
+            //[FWHintView dismiss];
+            [weakSelf.timer invalidate];
+            weakSelf.timer = nil;
+        }];
         return keyView;
     }
     return nil;
 }
 
-/*
- -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
- return CGSizeMake(30,30);
- }
- */
 
 //定义每个UICollectionView 的 margin
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
@@ -164,23 +189,21 @@
 }
 
 #pragma mark --UICollectionViewDelegate
+
 //UICollectionView被选中时调用的方法
--(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     UICollectionViewCell * cell = (UICollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
-    if ([cell isKindOfClass:[FWKeyView class]]) {
-        [self handleKeyInput:[((FWKeyView*)cell) keyValue]];
-    }
+    [self handleKeyInput:[((FWKeyView*)cell) keyValue]];
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
-    //UICollectionViewCell * cell = (UICollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
-    //cell.backgroundColor = [UIColor orangeColor];
+    UICollectionViewCell * cell = (UICollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    if ([cell isKindOfClass:[FWKeyView class]]) {
+    }
 }
 
 //返回这个UICollectionView是否可以被选择
--(BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{
+-(BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     return YES;
 }
 

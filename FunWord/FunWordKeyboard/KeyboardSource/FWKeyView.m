@@ -14,6 +14,8 @@
 @property(nonatomic, strong)UILabel *textLabel;
 @property(nonatomic, strong)UIImageView *backImageView;
 @property(nonatomic, strong)UIView      *highlightedView;
+@property(nonatomic, strong)NSString    *imageNameN;
+@property(nonatomic, strong)NSString    *imageNameH;
 @end
 
 @implementation FWKeyView
@@ -43,6 +45,8 @@
         default:
             break;
     }
+    self.imageNameN = imageName;
+    self.imageNameH = [imageName stringByAppendingString:@"_pressed"];
     self.backImageView.image = [UIImage imageNamed:imageName];
 }
 
@@ -54,6 +58,8 @@
     }
     UIImage *image = [UIImage imageNamed:text];
     if (image) {
+        self.imageNameN = text;
+        self.imageNameH = [text stringByAppendingString:@"_pressed"];
         self.backImageView.image = image;
     } else {
         self.textLabel.text = text;
@@ -93,7 +99,12 @@
 }
 
 - (void)setHighlighted:(BOOL)highlighted{
-    self.highlightedView.hidden = !highlighted;
+    //self.highlightedView.hidden = !highlighted;
+    if (highlighted) {
+        self.backImageView.image = [UIImage imageNamed:self.imageNameH];
+    } else {
+        self.backImageView.image = [UIImage imageNamed:self.imageNameN];
+    }
 }
 
 #pragma mark - Override

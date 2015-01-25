@@ -15,11 +15,13 @@
 #define ObjectAtIndex(array,index) (index>=0 && index<[array count]) ? [array objectAtIndex:index] : nil
 
 @interface FWTextKeyView ()<UITableViewDelegate, UITableViewDataSource>
-@property(nonatomic, strong)HMSegmentedControl *segmentedControl;
-@property(nonatomic, strong)UITableView        *tableView;
-@property(nonatomic, strong)NSArray            *categoryItems;
-@property(nonatomic, assign)NSInteger           currentSeleted;
-@property (strong, nonatomic)UIView            *seperateLine;
+@property(nonatomic, strong)HMSegmentedControl          *segmentedControl;
+@property(nonatomic, strong)UITableView                 *tableView;
+@property(nonatomic, strong)NSArray                     *categoryItems;
+@property(nonatomic, assign)NSInteger                   currentSeleted;
+@property (strong, nonatomic)UIView                     *seperateLine;
+@property(nonatomic, strong)UISwipeGestureRecognizer    *rightSwipeGestureRecognizer;
+@property(nonatomic, strong)UISwipeGestureRecognizer    *leftSwipeGestureRecognizer;
 @end
 
 @implementation FWTextKeyView
@@ -32,9 +34,21 @@
         [self addSubview:self.seperateLine];
         [self addSubview:self.tableView];
         [self.tableView registerNib:[UINib nibWithNibName:@"FWTextKeyViewCell" bundle:nil] forCellReuseIdentifier:@"FWTextKeyViewCell"];
-
+        // Swipe
+        self.rightSwipeGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handlerSwipeGesture:)];
+        self.leftSwipeGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handlerSwipeGesture:)];
+        self.leftSwipeGestureRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
+        [self addGestureRecognizer:self.rightSwipeGestureRecognizer];
+        [self addGestureRecognizer:self.leftSwipeGestureRecognizer];
     }
     return self;
+}
+
+- (void)dealloc
+{
+    [self removeGestureRecognizer:self.rightSwipeGestureRecognizer];
+    [self removeGestureRecognizer:self.leftSwipeGestureRecognizer];
+
 }
 
 + (NSString *)reuseIdentifier{
@@ -104,6 +118,50 @@
     [self.tableView reloadData];
     [self.tableView scrollRectToVisible:CGRectMake(0, 0, 10, 10) animated:YES];
 }
+
+
+
+#pragma mark - handlerSwipeGesture
+- (void)handlerSwipeGesture:(id)sender{
+    UISwipeGestureRecognizer *swipeGestureRecognizer = (UISwipeGestureRecognizer *)sender;
+    NSInteger index   = self.currentSeleted;
+    NSInteger toIndex = swipeGestureRecognizer.direction == UISwipeGestureRecognizerDirectionLeft ? index + 1 : index -1;
+    toIndex = MAX(toIndex, 0);
+    toIndex = MIN(toIndex, [self.categoryItems count]-1);
+    //NSLog(@">>>swipe from %d to %d",index, toIndex);
+    
+    if (self.currentSeleted != toIndex) {
+        [self.segmentedControl setSelectedSegmentIndex:toIndex animated:YES];
+        self.currentSeleted = toIndex;
+        [self.tableView reloadData];
+        [self.tableView scrollRectToVisible:CGRectMake(0, 0, 10, 10) animated:YES];
+        
+        UIImageView *fromView = [self animatedImageView];
+        [self addSubview:fromView];
+        CGRect originRect = self.tableView.frame;
+        CGRect toRect = CGRectMake((swipeGestureRecognizer.direction == UISwipeGestureRecognizerDirectionLeft) ? self.tableView.frame.size.width : -self.tableView.frame.size.width , self.tableView.frame.origin.y, self.tableView.frame.size.width, self.tableView.frame.size.height);
+        CGRect toRect1 = CGRectMake(-toRect.origin.x, toRect.origin.y, toRect.size.width, toRect.size.height);
+        self.tableView.frame = toRect;
+        [UIView animateWithDuration:0.25 animations:^{
+            self.tableView.frame = originRect;
+            fromView.frame = toRect1;
+        } completion:^(BOOL finished) {
+            [fromView removeFromSuperview];
+        }];
+    }
+}
+
+-(UIImageView*)animatedImageView{
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.tableView.frame];
+    UIGraphicsBeginImageContext(self.tableView.bounds.size);
+    CALayer *layer = self.tableView.layer;
+    [layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    imageView.image = image;
+    return imageView  ;
+}
+
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{

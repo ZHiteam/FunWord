@@ -56,4 +56,6 @@ typedef NS_OPTIONS(NSUInteger, FWKeyboardType) {
 @property(nonatomic, weak) UIInputViewController          *inputVC;
 /////////////////////////////////////////////////////////////////////////
 - (BOOL)handlerWithKey:(NSString*)keyValue;
+- (BOOL)isDeleteBackKey:(NSString*)keyValue;
+
 @end

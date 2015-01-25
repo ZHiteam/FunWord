@@ -140,7 +140,7 @@
     }else if ([keyValue hasPrefix:@"F6"]) {
         [self handlerInput:@" "];
     }else if ([keyValue hasPrefix:@"F7"]) {
-        [self.textDocumentProxy deleteBackward];
+        //[self.textDocumentProxy deleteBackward];
     }else if ([keyValue hasPrefix:@"F8"]) {//send
         [self handlerInput:@"\n"];
     }else if ([keyValue hasPrefix:@"F9"]) {//shift
@@ -153,6 +153,13 @@
         [self handlerInput:keyValue];
     }
     
+    return NO;
+}
+
+- (BOOL)isDeleteBackKey:(NSString*)keyValue{
+    if ([keyValue isEqualToString:@"F7"]) {
+        return YES;
+    }
     return NO;
 }
 
