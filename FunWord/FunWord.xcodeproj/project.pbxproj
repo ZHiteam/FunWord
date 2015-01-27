@@ -10,6 +10,16 @@
 		25522B26EA6AEC6F4A05FAA4 /* libPods-FunWord.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A64BDF7003DDBCB686607B71 /* libPods-FunWord.a */; };
 		840136CA1A5300DE00CD5635 /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 840136C91A5300DE00CD5635 /* libz.1.dylib */; };
 		84180BBF1A73414700BD7F9C /* edit_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84180BBE1A73414700BD7F9C /* edit_bg@2x.png */; };
+		84180BDB1A73CF5400BD7F9C /* bt_space_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84180BD21A73CF5400BD7F9C /* bt_space_pressed@2x.png */; };
+		84180BDC1A73CF5400BD7F9C /* bt_language_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84180BD31A73CF5400BD7F9C /* bt_language_pressed@2x.png */; };
+		84180BDD1A73CF5400BD7F9C /* bt_backspace_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84180BD41A73CF5400BD7F9C /* bt_backspace_pressed@2x.png */; };
+		84180BDE1A73CF5400BD7F9C /* bt_shift_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84180BD51A73CF5400BD7F9C /* bt_shift_pressed@2x.png */; };
+		84180BDF1A73CF5400BD7F9C /* bt_send_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84180BD61A73CF5400BD7F9C /* bt_send_pressed@2x.png */; };
+		84180BE01A73CF5400BD7F9C /* key_bg2_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84180BD71A73CF5400BD7F9C /* key_bg2_pressed@2x.png */; };
+		84180BE11A73CF5400BD7F9C /* key_bg1_pressed3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84180BD81A73CF5400BD7F9C /* key_bg1_pressed3@2x.png */; };
+		84180BE21A73CF5400BD7F9C /* key_bg1_pressed2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84180BD91A73CF5400BD7F9C /* key_bg1_pressed2@2x.png */; };
+		84180BE31A73CF5400BD7F9C /* key_bg1_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84180BDA1A73CF5400BD7F9C /* key_bg1_pressed@2x.png */; };
+		84180BE61A73D0C600BD7F9C /* FWHintView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84180BE51A73D0C600BD7F9C /* FWHintView.m */; };
 		84478A8F1A71549A005BAC49 /* FWEmotionKeyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84478A621A71549A005BAC49 /* FWEmotionKeyView.m */; };
 		84478A901A71549A005BAC49 /* FWEmotionKeyViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84478A641A71549A005BAC49 /* FWEmotionKeyViewCell.m */; };
 		84478A911A71549A005BAC49 /* FWEmotionKeyViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84478A651A71549A005BAC49 /* FWEmotionKeyViewCell.xib */; };
@@ -157,6 +167,17 @@
 		840136C81A52FFBD00CD5635 /* FunWord-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FunWord-Prefix.pch"; sourceTree = "<group>"; };
 		840136C91A5300DE00CD5635 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = usr/lib/libz.1.dylib; sourceTree = SDKROOT; };
 		84180BBE1A73414700BD7F9C /* edit_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit_bg@2x.png"; sourceTree = "<group>"; };
+		84180BD21A73CF5400BD7F9C /* bt_space_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bt_space_pressed@2x.png"; sourceTree = "<group>"; };
+		84180BD31A73CF5400BD7F9C /* bt_language_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bt_language_pressed@2x.png"; sourceTree = "<group>"; };
+		84180BD41A73CF5400BD7F9C /* bt_backspace_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bt_backspace_pressed@2x.png"; sourceTree = "<group>"; };
+		84180BD51A73CF5400BD7F9C /* bt_shift_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bt_shift_pressed@2x.png"; sourceTree = "<group>"; };
+		84180BD61A73CF5400BD7F9C /* bt_send_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bt_send_pressed@2x.png"; sourceTree = "<group>"; };
+		84180BD71A73CF5400BD7F9C /* key_bg2_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "key_bg2_pressed@2x.png"; sourceTree = "<group>"; };
+		84180BD81A73CF5400BD7F9C /* key_bg1_pressed3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "key_bg1_pressed3@2x.png"; sourceTree = "<group>"; };
+		84180BD91A73CF5400BD7F9C /* key_bg1_pressed2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "key_bg1_pressed2@2x.png"; sourceTree = "<group>"; };
+		84180BDA1A73CF5400BD7F9C /* key_bg1_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "key_bg1_pressed@2x.png"; sourceTree = "<group>"; };
+		84180BE41A73D0C600BD7F9C /* FWHintView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWHintView.h; sourceTree = "<group>"; };
+		84180BE51A73D0C600BD7F9C /* FWHintView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWHintView.m; sourceTree = "<group>"; };
 		84478A611A71549A005BAC49 /* FWEmotionKeyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWEmotionKeyView.h; sourceTree = "<group>"; };
 		84478A621A71549A005BAC49 /* FWEmotionKeyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWEmotionKeyView.m; sourceTree = "<group>"; };
 		84478A631A71549A005BAC49 /* FWEmotionKeyViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWEmotionKeyViewCell.h; sourceTree = "<group>"; };
@@ -424,11 +445,6 @@
 		84478A601A71549A005BAC49 /* KeyboardSource */ = {
 			isa = PBXGroup;
 			children = (
-				84478A611A71549A005BAC49 /* FWEmotionKeyView.h */,
-				84478A621A71549A005BAC49 /* FWEmotionKeyView.m */,
-				84478A631A71549A005BAC49 /* FWEmotionKeyViewCell.h */,
-				84478A641A71549A005BAC49 /* FWEmotionKeyViewCell.m */,
-				84478A651A71549A005BAC49 /* FWEmotionKeyViewCell.xib */,
 				84478A661A71549A005BAC49 /* FWKeyboardConst.h */,
 				84478A671A71549A005BAC49 /* FWKeyboardLayout.h */,
 				84478A681A71549A005BAC49 /* FWKeyboardLayout.m */,
@@ -438,6 +454,8 @@
 				84478A6C1A71549A005BAC49 /* FWKeyboardUtil.m */,
 				84478A6D1A71549A005BAC49 /* FWKeyboardVC.h */,
 				84478A6E1A71549A005BAC49 /* FWKeyboardVC.m */,
+				84180BE41A73D0C600BD7F9C /* FWHintView.h */,
+				84180BE51A73D0C600BD7F9C /* FWHintView.m */,
 				84478A6F1A71549A005BAC49 /* FWKeyView.h */,
 				84478A701A71549A005BAC49 /* FWKeyView.m */,
 				84478A711A71549A005BAC49 /* FWTextKeyView.h */,
@@ -445,6 +463,11 @@
 				84478A731A71549A005BAC49 /* FWTextKeyViewCell.h */,
 				84478A741A71549A005BAC49 /* FWTextKeyViewCell.m */,
 				84478A751A71549A005BAC49 /* FWTextKeyViewCell.xib */,
+				84478A611A71549A005BAC49 /* FWEmotionKeyView.h */,
+				84478A621A71549A005BAC49 /* FWEmotionKeyView.m */,
+				84478A631A71549A005BAC49 /* FWEmotionKeyViewCell.h */,
+				84478A641A71549A005BAC49 /* FWEmotionKeyViewCell.m */,
+				84478A651A71549A005BAC49 /* FWEmotionKeyViewCell.xib */,
 				84478A761A71549A005BAC49 /* HMSegmentedControl */,
 				84478A791A71549A005BAC49 /* NSDictionary+FWKeyboard.h */,
 				84478A7A1A71549A005BAC49 /* NSDictionary+FWKeyboard.m */,
@@ -466,6 +489,15 @@
 		84478A7D1A71549A005BAC49 /* KeyboardResource */ = {
 			isa = PBXGroup;
 			children = (
+				84180BD21A73CF5400BD7F9C /* bt_space_pressed@2x.png */,
+				84180BD31A73CF5400BD7F9C /* bt_language_pressed@2x.png */,
+				84180BD41A73CF5400BD7F9C /* bt_backspace_pressed@2x.png */,
+				84180BD51A73CF5400BD7F9C /* bt_shift_pressed@2x.png */,
+				84180BD61A73CF5400BD7F9C /* bt_send_pressed@2x.png */,
+				84180BD71A73CF5400BD7F9C /* key_bg2_pressed@2x.png */,
+				84180BD81A73CF5400BD7F9C /* key_bg1_pressed3@2x.png */,
+				84180BD91A73CF5400BD7F9C /* key_bg1_pressed2@2x.png */,
+				84180BDA1A73CF5400BD7F9C /* key_bg1_pressed@2x.png */,
 				84478A7E1A71549A005BAC49 /* bg_pattern@2x.png */,
 				84478A7F1A71549A005BAC49 /* bt_ABC@2x.png */,
 				84478A801A71549A005BAC49 /* bt_backspace@2x.png */,
@@ -848,17 +880,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84180BDC1A73CF5400BD7F9C /* bt_language_pressed@2x.png in Resources */,
 				84478A991A71549A005BAC49 /* FWTextKeyViewCell.xib in Resources */,
 				84478AA41A71549A005BAC49 /* bt_space@2x.png in Resources */,
+				84180BDD1A73CF5400BD7F9C /* bt_backspace_pressed@2x.png in Resources */,
+				84180BE31A73CF5400BD7F9C /* key_bg1_pressed@2x.png in Resources */,
 				84478A9E1A71549A005BAC49 /* bt_ABC@2x.png in Resources */,
 				84478AAB1A71549A005BAC49 /* num_26.ini in Resources */,
+				84180BE21A73CF5400BD7F9C /* key_bg1_pressed2@2x.png in Resources */,
 				84478AA21A71549A005BAC49 /* bt_send@2x.png in Resources */,
 				84478AAD1A71549A005BAC49 /* text.ini in Resources */,
+				84180BDB1A73CF5400BD7F9C /* bt_space_pressed@2x.png in Resources */,
+				84180BE01A73CF5400BD7F9C /* key_bg2_pressed@2x.png in Resources */,
 				84478AA51A71549A005BAC49 /* bt_text@2x.png in Resources */,
 				84478AA91A71549A005BAC49 /* key_bg2@2x.png in Resources */,
+				84180BDE1A73CF5400BD7F9C /* bt_shift_pressed@2x.png in Resources */,
 				84478AAC1A71549A005BAC49 /* py_26.ini in Resources */,
 				84478AA01A71549A005BAC49 /* bt_emotion@2x.png in Resources */,
 				84478AA31A71549A005BAC49 /* bt_shift@2x.png in Resources */,
+				84180BDF1A73CF5400BD7F9C /* bt_send_pressed@2x.png in Resources */,
 				84478AA71A71549A005BAC49 /* emotion_bg@2x.png in Resources */,
 				84478AA11A71549A005BAC49 /* bt_language@2x.png in Resources */,
 				84478AA61A71549A005BAC49 /* emotion.ini in Resources */,
@@ -866,6 +906,7 @@
 				84478A911A71549A005BAC49 /* FWEmotionKeyViewCell.xib in Resources */,
 				84478A9D1A71549A005BAC49 /* bg_pattern@2x.png in Resources */,
 				84478AA81A71549A005BAC49 /* key_bg1@2x.png in Resources */,
+				84180BE11A73CF5400BD7F9C /* key_bg1_pressed3@2x.png in Resources */,
 				84478AAA1A71549A005BAC49 /* key_bg3@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -963,6 +1004,7 @@
 				84478A9A1A71549A005BAC49 /* HMSegmentedControl.m in Sources */,
 				84478A8F1A71549A005BAC49 /* FWEmotionKeyView.m in Sources */,
 				84478A981A71549A005BAC49 /* FWTextKeyViewCell.m in Sources */,
+				84180BE61A73D0C600BD7F9C /* FWHintView.m in Sources */,
 				84478A961A71549A005BAC49 /* FWKeyView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1028,7 +1070,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1063,7 +1105,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -1170,10 +1212,9 @@
 		84F23BE91A466CED0084F122 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = armv7s;
-				CODE_SIGN_ENTITLEMENTS = FunWordKeyboard/FunWordKeyboard.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ARCHS = "$(ARCHS_STANDARD)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: lu ye (FD78BG9MG9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: lu ye (3R4K7E9589)";
 				INFOPLIST_FILE = FunWordKeyboard/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -1214,7 +1255,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -1259,10 +1300,9 @@
 		9C0FC1DF1A6EA19000D1BC15 /* ad hoc distribution */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = armv7s;
-				CODE_SIGN_ENTITLEMENTS = FunWordKeyboard/FunWordKeyboard.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ARCHS = "$(ARCHS_STANDARD)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: lu ye (3R4K7E9589)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: lu ye (3R4K7E9589)";
 				INFOPLIST_FILE = FunWordKeyboard/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";

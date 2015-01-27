@@ -11,10 +11,6 @@
 
 
 @interface FWEmotionKeyViewCell ()
-@property (weak, nonatomic) IBOutlet UIImageView *imageView1;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView2;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView3;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView4;
 @property (weak, nonatomic) IBOutlet UILabel *label1;
 @property (weak, nonatomic) IBOutlet UILabel *label2;
 @property (weak, nonatomic) IBOutlet UILabel *label3;
@@ -32,11 +28,30 @@
     self.label3.textColor = color;
     self.label4.textColor = color;
     
+    CGFloat width = [[UIScreen mainScreen] bounds].size.width;
+    
+    self.imageView1.frame = CGRectMake(8, 8, roundf(width/4.0)-16, 56);
+    self.label1.frame = CGRectMake(0, 64, roundf(width/4.0), 14);
+    self.imageView2.frame = CGRectMake(roundf(width/4.0)+8, 8, roundf(width/4.0)-16, 56);
+    self.label2.frame = CGRectMake(roundf(width/4.0), 64, roundf(width/4.0), 14);
+    self.imageView3.frame = CGRectMake(roundf(width/4.0)*2+8, 8, roundf(width/4.0)-16, 56);
+    self.label3.frame = CGRectMake(roundf(width/4.0)*2, 64, roundf(width/4.0), 14);
+    self.imageView4.frame = CGRectMake(roundf(width/4.0)*3+8, 8, roundf(width/4.0)-16, 56);
+    self.label4.frame = CGRectMake(roundf(width/4.0)*3, 64, roundf(width/4.0), 14);
+    
     [self configureLabelSeleted:self.label1];
     [self configureLabelSeleted:self.label2];
     [self configureLabelSeleted:self.label3];
     [self configureLabelSeleted:self.label4];
-
+    
+    self.label1.text = @"";
+    self.label2.text = @"";
+    self.label3.text = @"";
+    self.label4.text = @"";
+    self.imageView1.image = nil;
+    self.imageView2.image = nil;
+    self.imageView3.image = nil;
+    self.imageView4.image = nil;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
