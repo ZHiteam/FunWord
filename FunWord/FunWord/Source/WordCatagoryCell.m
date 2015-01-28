@@ -54,7 +54,7 @@
 
 -(UIButton *)btn2{
     if (!_btn2) {
-        _btn2 = [[UIButton alloc]initWithFrame:CGRectMake(self.btn1.width+self.btn1.x+BTN_SPAN, 10, BTN_WIDTH, 40)];
+        _btn2 = [[UIButton alloc]initWithFrame:CGRectMake(self.btn1.right+BTN_SPAN, 10, BTN_WIDTH, 40)];
         [_btn2 setBackgroundImage:[UIImage imageNamed:@"text_bt_bg1"] forState:UIControlStateNormal];
         [_btn2 setTitleColor:FERGB(0x8d, 0x59, 0x36, 1) forState:UIControlStateNormal];
         _btn2.titleLabel.font = SYS_FONT(16);

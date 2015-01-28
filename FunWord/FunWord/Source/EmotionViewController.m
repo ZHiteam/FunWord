@@ -53,7 +53,7 @@
 -(FunWorkSegmentView *)segment{
     
     if (!_segment) {
-        CGFloat top = self.navigationController.navigationBar.height+self.navigationController.navigationBar.y;
+        CGFloat top = self.navigationController.navigationBar.bottom;
         _segment = [[FunWorkSegmentView alloc]initWithFrame:CGRectMake(0, top, self.view.width, 68)];
         _segment.delegate = self;
     }
@@ -64,7 +64,7 @@
 -(UITableView *)contentTable{
     
     if (!_contentTable) {
-        _contentTable = [[UITableView alloc]initWithFrame:CGRectMake(0, self.segment.height+self.segment.y, self.segment.width, self.view.height-self.segment.height-self.segment.y-self.tabBarController.tabBar.height)];
+        _contentTable = [[UITableView alloc]initWithFrame:CGRectMake(0, self.segment.bottom, self.segment.width, self.view.height-self.segment.bottom-self.tabBarController.tabBar.height)];
         _contentTable.showsHorizontalScrollIndicator = NO;
         _contentTable.showsVerticalScrollIndicator = NO;
         _contentTable.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -125,8 +125,14 @@
 }
 
 -(void)praserData:(NSDictionary* )data{
-    if (data[@"popularList"]) {
-        self.data = [EmotionModel praserModelWithInfo:data[@"popularList"]];
+    
+    NSDictionary* info = data[@"popularList"];
+    if (!info) {
+        info = data[@"richList"];
+    }
+    
+    if (info) {
+        self.data = [EmotionModel praserModelWithInfo:info];
     }
     [self.contentTable reloadData];
 }

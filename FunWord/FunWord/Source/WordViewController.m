@@ -52,7 +52,7 @@
 -(FunWorkSegmentView *)segment{
     
     if (!_segment) {
-        CGFloat top = self.navigationController.navigationBar.height+self.navigationController.navigationBar.y;
+        CGFloat top = self.navigationController.navigationBar.bottom;
         _segment = [[FunWorkSegmentView alloc]initWithFrame:CGRectMake(0, top, self.view.width, 68)];
         _segment.delegate = self;
     }
@@ -63,7 +63,7 @@
 -(UITableView *)contentTable{
     
     if (!_contentTable) {
-        _contentTable = [[UITableView alloc]initWithFrame:CGRectMake(0, self.segment.height+self.segment.y, self.segment.width, self.view.height-self.segment.height-self.segment.y-self.tabBarController.tabBar.height)];
+        _contentTable = [[UITableView alloc]initWithFrame:CGRectMake(0, self.segment.bottom, self.segment.width, self.view.height-self.segment.bottom-self.tabBarController.tabBar.height)];
         _contentTable.showsHorizontalScrollIndicator = NO;
         _contentTable.showsVerticalScrollIndicator = NO;
         _contentTable.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -97,9 +97,14 @@
 }
 
 -(void)praserData:(NSDictionary* )data{
-//    self.data = @[@"开心",@"滑稽"];
-    if (data[@"popularList"]) {
-        WordCatagoryModel* model = [WordCatagoryModel praserModelWithInfo:data[@"popularList"]];
+    
+    NSDictionary* info = data[@"popularList"];
+    if (!info) {
+        info = data[@"richList"];
+    }
+    
+    if (info) {
+        WordCatagoryModel* model = [WordCatagoryModel praserModelWithInfo:info];
         self.data = model;
         [self.contentTable reloadData];
     }

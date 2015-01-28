@@ -84,7 +84,7 @@ static const void* userInfoKey = &userInfoKey;
     }
     
     UIImageView* imageView = [[UIImageView alloc]initWithFrame:CGRectMake(1, 1, 32, 32)];
-    [imageView sd_setImageWithURL:[NSURL URLWithString:info[@"icon"]]];
+    [imageView setImageWithURL:[NSURL URLWithString:info[@"icon"]]];
     imageView.layer.masksToBounds = YES;
     imageView.layer.cornerRadius = 16;
 

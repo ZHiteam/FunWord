@@ -56,7 +56,7 @@
 -(FunWorkSegmentView *)segment{
     
     if (!_segment) {
-        CGFloat top = self.navigationController.navigationBar.height+self.navigationController.navigationBar.y;
+        CGFloat top = self.navigationController.navigationBar.bottom;
         _segment = [[FunWorkSegmentView alloc]initWithFrame:CGRectMake(0, top, self.view.width, 68)];
         [_segment loadSegmentAtIndex:0 image:[UIImage imageNamed:@"bt1_text_off"] selectImage:[UIImage imageNamed:@"bt1_text_on"]];
         [_segment loadSegmentAtIndex:1 image:[UIImage imageNamed:@"bt2_emotion_off"] selectImage:[UIImage imageNamed:@"bt2_emotion_on"]];
@@ -83,7 +83,7 @@
 -(WordTableView *)contentTable{
     
     if (!_contentTable) {
-        CGFloat top = self.segment.height+self.segment.y;
+        CGFloat top = self.segment.bottom;
         CGFloat height = self.view.height-top-self.tabBarController.tabBar.height;
         
         _contentTable = [[WordTableView alloc]initWithFrame:CGRectMake(0, top, self.view.width, height)];
@@ -115,7 +115,6 @@
 
 -(void)praserData:(NSDictionary*)data{
     NSArray* list = nil;
-#warning 容错
     for (NSString* key in data.allKeys) {
         if ([key hasSuffix:@"favoriteRichWordList"]) {
             list = data[key];

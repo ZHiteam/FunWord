@@ -1,58 +1,50 @@
 PODS:
-  - AFNetworking (2.4.1):
-    - AFNetworking/NSURLConnection
-    - AFNetworking/NSURLSession
+  - AFNetworking (2.5.0):
+    - AFNetworking/NSURLConnection (= 2.5.0)
+    - AFNetworking/NSURLSession (= 2.5.0)
+    - AFNetworking/Reachability (= 2.5.0)
+    - AFNetworking/Security (= 2.5.0)
+    - AFNetworking/Serialization (= 2.5.0)
+    - AFNetworking/UIKit (= 2.5.0)
+  - AFNetworking/NSURLConnection (2.5.0):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-    - AFNetworking/UIKit
-  - AFNetworking/NSURLConnection (2.4.1):
+  - AFNetworking/NSURLSession (2.5.0):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.4.1):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.4.1)
-  - AFNetworking/Security (2.4.1)
-  - AFNetworking/Serialization (2.4.1)
-  - AFNetworking/UIKit (2.4.1):
+  - AFNetworking/Reachability (2.5.0)
+  - AFNetworking/Security (2.5.0)
+  - AFNetworking/Serialization (2.5.0)
+  - AFNetworking/UIKit (2.5.0):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - ASProgressPopUpView (0.8)
-  - FEFramework (0.0.1):
-    - SDWebImage
   - HMSegmentedControl (1.4.0)
-  - SDWebImage (3.7.1):
-    - SDWebImage/Core
-  - SDWebImage/Core (3.7.1)
+  - SDWebImage (3.6):
+    - SDWebImage/Core (= 3.6)
+  - SDWebImage/Core (3.6)
   - SVProgressHUD (1.0)
   - SVPullToRefresh (0.4.1)
   - TPKeyboardAvoiding (1.2.4)
 
 DEPENDENCIES:
-  - AFNetworking (= 2.4.1)
+  - AFNetworking (= 2.5.0)
   - ASProgressPopUpView (= 0.8)
-  - FEFramework (from `git@github.com:FerrariXX/FEFramework.git`)
   - HMSegmentedControl (= 1.4.0)
   - SDWebImage (= 3.6.0)
   - SVProgressHUD (= 1.0)
   - SVPullToRefresh (= 0.4.1)
   - TPKeyboardAvoiding (= 1.2.4)
 
-EXTERNAL SOURCES:
-  FEFramework:
-    :git: git@github.com:FerrariXX/FEFramework.git
-
 SPEC CHECKSUMS:
-  AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
+  AFNetworking: 0f54cb5d16ce38c1b76948faffb8d5fb705021c7
   ASProgressPopUpView: 7443b650bb54acb6557ab8495eaa6adea2183577
-  FEFramework: aa4cbf81de7b0f8e5eeae4dbea4fc585b3d14c18
   HMSegmentedControl: c0517a8d4b80c978b8386f863f1c44729cfd7d6f
-  SDWebImage: 116e88633b5b416ea0ca4b334a4ac59cf72dd38d
+  SDWebImage: c6989652c1cdf27cbdf3f56957e2030f825af5bc
   SVProgressHUD: 5034c6e22b8c2ca3e09402e48d41ed0340aa1c50
   SVPullToRefresh: d5161ebc833a38b465364412e5e307ca80bbb190
   TPKeyboardAvoiding: 925e1e1912597d1a4956697eec3bd9656552153c
 
-COCOAPODS: 0.34.4
+COCOAPODS: 0.36.0.beta.1

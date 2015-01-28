@@ -60,7 +60,7 @@
 
 -(void)reloadWithModel:(EmotionModel *)model{
     self.model = model;
-    [self.photoView sd_setImageWithURL:[NSURL URLWithString:model.photoUrl]];
+    [self.photoView setImageWithURL:[NSURL URLWithString:model.photoUrl]];
     self.labelView.text = model.name;
 }
 

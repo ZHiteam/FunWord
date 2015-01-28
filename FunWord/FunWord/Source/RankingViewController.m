@@ -44,7 +44,7 @@ typedef enum E_CATAGORY_TYPE{
     CGFloat topSpan = 52;
     
     CGFloat width = (self.view.width -leftSpan*2-span)/2;
-    CGFloat top = self.navigationController.navigationBar.y+self.navigationController.navigationBar.height;
+    CGFloat top = self.navigationController.navigationBar.bottom;
     
     UIImageView* bg = [[UIImageView alloc]initWithFrame:CGRectMake(0, top, self.view.width, 200)];
     bg.image = [UIImage imageNamed:@"ranking_bt_bg"];
@@ -58,14 +58,14 @@ typedef enum E_CATAGORY_TYPE{
     
     [self.view addSubview:wordBtn];
     
-    UIButton* iconBtn = [[UIButton alloc]initWithFrame:CGRectMake(leftSpan+span+width, wordBtn.y, width, width)];
+    UIButton* iconBtn = [[UIButton alloc]initWithFrame:CGRectMake(leftSpan+span+width, wordBtn.top, width, width)];
     [iconBtn setImage:[UIImage imageNamed:@"bt_emotion"] forState:UIControlStateNormal];
     iconBtn.tag = ICON_CATAGORY;
     [iconBtn addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:iconBtn];
     
-    UIImageView* roseLine = [[UIImageView alloc]initWithFrame:CGRectMake(0, iconBtn.y+iconBtn.height+12, self.view.width, 24)];
+    UIImageView* roseLine = [[UIImageView alloc]initWithFrame:CGRectMake(0, iconBtn.bottom+12, self.view.width, 24)];
     roseLine.image = [UIImage imageNamed:@"rose_line"];
     
     [self.view addSubview:roseLine];

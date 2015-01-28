@@ -3,15 +3,16 @@
 target 'FunWord' do
 	platform:ios, '6.0'
 
-    pod 'FEFramework',:git => 'git@github.com:FerrariXX/FEFramework.git'
+#    pod 'FEFramework',:git => 'git@github.com:FerrariXX/FEFramework.git'
     pod "SDWebImage",               '3.6.0'  #"SDWebImage/WebP"
-    pod "AFNetworking",             '2.4.1'
+    pod "AFNetworking",             '2.5.0'
     pod "SVPullToRefresh",          '0.4.1'
     pod "HMSegmentedControl",       '1.4.0'
     pod "ASProgressPopUpView",      '0.8'
     pod "TPKeyboardAvoiding",       '1.2.4'
     #pod "ZBarSDK",                  '1.3.1'
     pod "SVProgressHUD",            '1.0'
+    #pod 'WeiboSDK', '~> 3.0.1'
 end
 
 target 'FunWordKeyboard' do

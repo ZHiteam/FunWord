@@ -87,6 +87,9 @@
 
 -(void)praserData:(NSDictionary*)data{
     NSArray* list = data[@"popularWordList"];
+    if (!list) {
+        list = data[@"richWordList"];
+    }
     
     NSMutableArray* ret = [[NSMutableArray alloc]initWithCapacity:list.count];
     

@@ -59,7 +59,7 @@
 -(UIButton *)favorite{
     
     if (!_favorite) {
-        _favorite = [[UIButton alloc]initWithFrame:CGRectMake(self.text.width+self.text.x+20, self.text.y, TEXT_HEIGHT, TEXT_HEIGHT)];
+        _favorite = [[UIButton alloc]initWithFrame:CGRectMake(self.text.right+20, self.text.top, TEXT_HEIGHT, TEXT_HEIGHT)];
         [_favorite setImage:[UIImage imageNamed:@"bt_love_off"] forState:UIControlStateNormal];
         [_favorite setImage:[UIImage imageNamed:@"bt_love_on"] forState:UIControlStateHighlighted];
         [_favorite setImage:[UIImage imageNamed:@"bt_love_on"] forState:UIControlStateSelected];
