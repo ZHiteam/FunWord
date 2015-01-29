@@ -1,6 +1,0 @@
-FEFramework
-===========
-
-
-
-Base resource

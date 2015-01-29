@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "RootViewController.h"
+#import "AuthorHelper.h"
 
 @interface AppDelegate ()
 
@@ -54,7 +55,43 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+//    return [ShareSDK handleOpenURL:url
+//                 sourceApplication:sourceApplication
+//                        annotation:annotation
+//                        wxDelegate:nil];
+    return [AuthorHelper handleUrl:url];
+}
+
+-(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
+//    return [ShareSDK handleOpenURL:url wxDelegate:nil];
+    return [AuthorHelper handleUrl:url];
+}
+
 -(void)ssoSetting{
+    
+    [AuthorHelper registerWeiboWithAppKey:@"2887881461"
+                                appSecret:@"7a3eb3bf35ebe97de323db25e4f65543"
+                              redirectUri:@"http://sns.whalecloud.com/sina2/callback"];
+    
+    
+//    [ShareSDK registerApp:@"562f3fcddae0"];
+//    
+//    /// 微博
+//    [ShareSDK connectSinaWeiboWithAppKey:@"2887881461"
+//                               appSecret:@"7a3eb3bf35ebe97de323db25e4f65543"
+//                             redirectUri:@"http://sns.whalecloud.com/sina2/callback"];
+//    /// 微信
+//    [ShareSDK connectWeChatWithAppId:@"wx6e591abe92bbab04"   //微信APPID
+//                           appSecret:@"e1251a15fe03039fb586a34ee5df1a8a"  //微信APPSecret
+//                           wechatCls:[WXApi class]];
+//    
+//    ///QQ 41CFA5D3
+//    [ShareSDK connectQQWithQZoneAppKey:@"1104127443"
+//                     qqApiInterfaceCls:[QQApiInterface class]
+//                       tencentOAuthCls:[TencentOAuth class]];
+    
 }
 
 @end

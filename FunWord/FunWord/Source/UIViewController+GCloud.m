@@ -9,6 +9,8 @@
 #import "UIViewController+GCloud.h"
 #import <objc/runtime.h>
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "AuthorViewController.h"
+#import "AuthorHelper.h"
 
 static const void* userInfoKey = &userInfoKey;
 
@@ -58,13 +60,11 @@ static const void* userInfoKey = &userInfoKey;
 }
 
 -(void)loadDefaultSetting{
-    
-    NSDictionary* info = [[NSUserDefaults standardUserDefaults]valueForKey:@"SSO"];
-    if (info[@"icon"]) {
-        [self updateUserInfo:info];
+    if (SSO_TYPE_None == [AuthorHelper currentSSOType]) {
+        self.navigationItem.rightBarButtonItem = [self barItemWithImage:[UIImage imageNamed:@"topbar_bt_user"] target:self selector:@selector(userAction)];
     }
     else{
-        self.navigationItem.rightBarButtonItem = [self barItemWithImage:[UIImage imageNamed:@"topbar_bt_user"] target:self selector:@selector(userAction)];        
+        [self updateUserInfo:[AuthorHelper currentLoginInfo]];
     }
     
     if (self.navigationController.viewControllers.firstObject != self) {
@@ -74,8 +74,14 @@ static const void* userInfoKey = &userInfoKey;
 }
 
 -(void)userAction{
-    UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"" message:@"第三方登录" delegate:nil cancelButtonTitle:@"确认" otherButtonTitles: nil];
-    [alert show];
+    [AuthorHelper weiboSSO:^(NSDictionary *info) {
+        if (info) {
+            [self updateUserInfo:info];
+        }
+        else{
+            [self resetUserInfo];
+        }
+    }];
 }
 
 -(void)updateUserInfo:(NSDictionary*)info{
@@ -95,15 +101,17 @@ static const void* userInfoKey = &userInfoKey;
     [ctl addSubview:bgImage];
     [ctl addSubview:imageView];
     
-    [ctl addTarget:self action:@selector(userInfoAction) forControlEvents:UIControlEventTouchUpInside];
+    [ctl addTarget:self action:@selector(resetUserInfo) forControlEvents:UIControlEventTouchUpInside];
 
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:ctl];
 }
 
--(void)userInfoAction{
-    [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"SSO"];
+-(void)resetUserInfo{
+    [AuthorHelper logout];
+    
     [self loadDefaultSetting];
 }
+
 @end
 
 @interface UINavigationItem (margin)
