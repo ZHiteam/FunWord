@@ -4,7 +4,7 @@ target 'FunWord' do
 	platform:ios, '6.0'
 
 #    pod 'FEFramework',:git => 'git@github.com:FerrariXX/FEFramework.git'
-    pod "SDWebImage",               '3.6.0'  #"SDWebImage/WebP"
+    pod "SDWebImage",               '3.6.0.3'#'3.6.0'  #"SDWebImage/WebP"
     pod "AFNetworking",             '2.5.0'
     pod "SVPullToRefresh",          '0.4.1'
     pod "HMSegmentedControl",       '1.4.0'
@@ -18,6 +18,6 @@ end
 target 'FunWordKeyboard' do
     platform:ios, '6.0'
 
-    pod "SDWebImage",               '3.6.0'  #"SDWebImage/WebP"
+    pod "SDWebImage",               '3.6.0.3'#'3.6.0.3'  #"SDWebImage/WebP"
 
 end

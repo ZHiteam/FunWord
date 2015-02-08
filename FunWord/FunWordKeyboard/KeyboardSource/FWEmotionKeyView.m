@@ -9,6 +9,7 @@
 #import "FWEmotionKeyView.h"
 #import "FWEmotionKeyViewCell.h"
 #import "UIImageView+WebCache.h"
+#import "UILabel+FWImageURL.h"
 
 #define RGBA(r, g, b, a)   [UIColor colorWithRed : r / 255.0f green : g / 255.0f blue : b / 255.0f alpha : a]
 #define RGB(r, g, b)        RGBA(r, g, b, 1.0f)
@@ -76,7 +77,8 @@
         _openAccessLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 40)];
         _openAccessLabel.backgroundColor = [UIColor yellowColor];
         _openAccessLabel.numberOfLines = 0;
-        _openAccessLabel.text = @"通过 设置>通用>键盘>呆萌输入法 中打开 完全访问 才可使用该功能";
+        _openAccessLabel.text = @"通过 \"设置>通用>键盘>呆萌输入法 中打开 完全访问\" 才可使用该功能";
+        _openAccessLabel.font = [UIFont systemFontOfSize:16.0];
     }
     return _openAccessLabel;
 }
@@ -122,18 +124,22 @@
     NSString*imageURL= ObjectAtIndex(images,index);
     if (imageURL) {
         [cell.imageView1 setImageWithURL:[NSURL URLWithString:imageURL]];
+        cell.label1.imageURL = imageURL;
     }
     imageURL= ObjectAtIndex(images,index+1);
     if (imageURL) {
         [cell.imageView2 setImageWithURL:[NSURL URLWithString:imageURL]];
+        cell.label2.imageURL = imageURL;
     }
     imageURL= ObjectAtIndex(images,index+2);
     if (imageURL) {
         [cell.imageView3 setImageWithURL:[NSURL URLWithString:imageURL]];
+        cell.label3.imageURL = imageURL;
     }
     imageURL= ObjectAtIndex(images,index+3);
     if (imageURL) {
         [cell.imageView4 setImageWithURL:[NSURL URLWithString:imageURL]];
+        cell.label4.imageURL = imageURL;
     }
     return cell;
 }

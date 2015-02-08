@@ -8,13 +8,9 @@
 
 #import "FWEmotionKeyViewCell.h"
 #import "UIView+FETouchBlocks.h"
-
+#import "UILabel+FWImageURL.h"
 
 @interface FWEmotionKeyViewCell ()
-@property (weak, nonatomic) IBOutlet UILabel *label1;
-@property (weak, nonatomic) IBOutlet UILabel *label2;
-@property (weak, nonatomic) IBOutlet UILabel *label3;
-@property (weak, nonatomic) IBOutlet UILabel *label4;
 
 @end
 
@@ -68,6 +64,27 @@
         UILabel *label = [labels objectAtIndex:index];
         label.text = [contents objectAtIndex:index];
     }
+    __weak typeof(self) weakSelf = self;
+    [self.imageView1 touchEndedBlock:^(NSSet *touches, UIEvent *event) {
+        if (weakSelf.handleBlock) {
+            weakSelf.handleBlock(self.label1.imageURL);
+        }
+    }];
+    [self.imageView2 touchEndedBlock:^(NSSet *touches, UIEvent *event) {
+        if (weakSelf.handleBlock) {
+            weakSelf.handleBlock(self.label2.imageURL);
+        }
+    }];
+    [self.imageView3 touchEndedBlock:^(NSSet *touches, UIEvent *event) {
+        if (weakSelf.handleBlock) {
+            weakSelf.handleBlock(self.label3.imageURL);
+        }
+    }];
+    [self.imageView4 touchEndedBlock:^(NSSet *touches, UIEvent *event) {
+        if (weakSelf.handleBlock) {
+            weakSelf.handleBlock(self.label4.imageURL);
+        }
+    }];
 }
 
 - (void)configureLabelSeleted:(UILabel*)label{
@@ -81,7 +98,7 @@
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             cell.backgroundColor = [UIColor clearColor];
             if (weakSelf.handleBlock) {
-                weakSelf.handleBlock(cell.text);
+                weakSelf.handleBlock(cell.imageURL);
             }
         });
     }];

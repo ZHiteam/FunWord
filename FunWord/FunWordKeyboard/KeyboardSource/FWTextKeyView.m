@@ -110,10 +110,11 @@
 
 - (UILabel *)openAccessLabel{
     if (_openAccessLabel == nil) {
-        _openAccessLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, self.segmentedControl.frame.size.height, self.frame.size.width, 40)];
+        _openAccessLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 40)];
         _openAccessLabel.backgroundColor = [UIColor yellowColor];
         _openAccessLabel.numberOfLines = 0;
-        _openAccessLabel.text = @"通过 设置>通用>键盘>呆萌输入法 中打开 完全访问 才可使用该功能";
+        _openAccessLabel.text = @"通过 \"设置>通用>键盘>呆萌输入法 中打开 完全访问\" 才可使用该功能";
+        _openAccessLabel.font = [UIFont systemFontOfSize:16.0];
     }
     return _openAccessLabel;
 }
