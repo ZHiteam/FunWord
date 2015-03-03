@@ -51,6 +51,7 @@
 		84478AAB1A71549A005BAC49 /* num_26.ini in Resources */ = {isa = PBXBuildFile; fileRef = 84478A8C1A71549A005BAC49 /* num_26.ini */; };
 		84478AAC1A71549A005BAC49 /* py_26.ini in Resources */ = {isa = PBXBuildFile; fileRef = 84478A8D1A71549A005BAC49 /* py_26.ini */; };
 		84478AAD1A71549A005BAC49 /* text.ini in Resources */ = {isa = PBXBuildFile; fileRef = 84478A8E1A71549A005BAC49 /* text.ini */; };
+		84F1BBDD1A87A437000900ED /* UILabel+FWImageURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F1BBDC1A87A437000900ED /* UILabel+FWImageURL.m */; };
 		84F23BB61A466CC90084F122 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F23BB51A466CC90084F122 /* main.m */; };
 		84F23BB91A466CC90084F122 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F23BB81A466CC90084F122 /* AppDelegate.m */; };
 		84F23BC11A466CC90084F122 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84F23BC01A466CC90084F122 /* Images.xcassets */; };
@@ -230,6 +231,8 @@
 		84478A8C1A71549A005BAC49 /* num_26.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = num_26.ini; sourceTree = "<group>"; };
 		84478A8D1A71549A005BAC49 /* py_26.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = py_26.ini; sourceTree = "<group>"; };
 		84478A8E1A71549A005BAC49 /* text.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = text.ini; sourceTree = "<group>"; };
+		84F1BBDB1A87A437000900ED /* UILabel+FWImageURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+FWImageURL.h"; sourceTree = "<group>"; };
+		84F1BBDC1A87A437000900ED /* UILabel+FWImageURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+FWImageURL.m"; sourceTree = "<group>"; };
 		84F23BB01A466CC90084F122 /* FunWord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FunWord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84F23BB41A466CC90084F122 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84F23BB51A466CC90084F122 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -497,6 +500,8 @@
 				84478A751A71549A005BAC49 /* FWTextKeyViewCell.xib */,
 				84478A611A71549A005BAC49 /* FWEmotionKeyView.h */,
 				84478A621A71549A005BAC49 /* FWEmotionKeyView.m */,
+				84F1BBDB1A87A437000900ED /* UILabel+FWImageURL.h */,
+				84F1BBDC1A87A437000900ED /* UILabel+FWImageURL.m */,
 				84478A631A71549A005BAC49 /* FWEmotionKeyViewCell.h */,
 				84478A641A71549A005BAC49 /* FWEmotionKeyViewCell.m */,
 				84478A651A71549A005BAC49 /* FWEmotionKeyViewCell.xib */,
@@ -1097,6 +1102,7 @@
 				84478A901A71549A005BAC49 /* FWEmotionKeyViewCell.m in Sources */,
 				84478A9C1A71549A005BAC49 /* UIView+FETouchBlocks.m in Sources */,
 				84478A9A1A71549A005BAC49 /* HMSegmentedControl.m in Sources */,
+				84F1BBDD1A87A437000900ED /* UILabel+FWImageURL.m in Sources */,
 				84478A8F1A71549A005BAC49 /* FWEmotionKeyView.m in Sources */,
 				84478A981A71549A005BAC49 /* FWTextKeyViewCell.m in Sources */,
 				84180BE61A73D0C600BD7F9C /* FWHintView.m in Sources */,
@@ -1215,7 +1221,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = FunWord/FunWord.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: lu ye (3R4K7E9589)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib/ShareSDK/Connection",
@@ -1236,8 +1242,8 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				VALID_ARCHS = "armv7 arm64 armv7s";
+				PROVISIONING_PROFILE = "6d28b137-9c84-41a0-a48a-428b23438b64";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
@@ -1248,8 +1254,8 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = FunWord/FunWord.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: lu ye (3R4K7E9589)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: lu ye (3R4K7E9589)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib/ShareSDK/Connection",
@@ -1270,8 +1276,9 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				VALID_ARCHS = "armv7 arm64 armv7s";
+
+				PROVISIONING_PROFILE = "6d28b137-9c84-41a0-a48a-428b23438b64";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;
 		};
@@ -1313,10 +1320,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9D6DAAA8F6F16A3547707AC7 /* Pods-FunWordKeyboard.debug.xcconfig */;
 			buildSettings = {
-				ARCHS = armv7s;
+				ARCHS = "$(ARCHS_STANDARD)";
 				CODE_SIGN_ENTITLEMENTS = FunWordKeyboard/FunWordKeyboard.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: lu ye (3R4K7E9589)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: lu ye (3R4K7E9589)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1325,9 +1332,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "35f12dd4-5037-473b-9caa-fe333064f1de";
 				SKIP_INSTALL = YES;
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
@@ -1335,17 +1342,17 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 46A37FEEDC5DF0B7CF4DE099 /* Pods-FunWordKeyboard.release.xcconfig */;
 			buildSettings = {
-				ARCHS = armv7s;
-				CODE_SIGN_IDENTITY = "iPhone Developer: lu ye (FD78BG9MG9)";
+				ARCHS = "$(ARCHS_STANDARD)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: lu ye (3R4K7E9589)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: lu ye (3R4K7E9589)";
 				INFOPLIST_FILE = FunWordKeyboard/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "35f12dd4-5037-473b-9caa-fe333064f1de";
 				SKIP_INSTALL = YES;
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;
 		};
@@ -1392,8 +1399,8 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = FunWord/FunWord.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: lu ye (3R4K7E9589)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: lu ye (3R4K7E9589)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib/ShareSDK/Connection",
@@ -1414,8 +1421,9 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				VALID_ARCHS = "armv7 arm64 armv7s";
+
+				PROVISIONING_PROFILE = "6d28b137-9c84-41a0-a48a-428b23438b64";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = "ad hoc distribution";
 		};
@@ -1436,19 +1444,19 @@
 		};
 		9C0FC1DF1A6EA19000D1BC15 /* ad hoc distribution */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0CBDD309DE94E63B8CFA1CC6 /* Pods-FunWordKeyboard.ad hoc distribution.xcconfig */;
+			baseConfigurationReference = 46A37FEEDC5DF0B7CF4DE099 /* Pods-FunWordKeyboard.release.xcconfig */;
 			buildSettings = {
-				ARCHS = armv7s;
+				ARCHS = "$(ARCHS_STANDARD)";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: lu ye (3R4K7E9589)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: lu ye (3R4K7E9589)";
 				INFOPLIST_FILE = FunWordKeyboard/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "35f12dd4-5037-473b-9caa-fe333064f1de";
 				SKIP_INSTALL = YES;
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = "ad hoc distribution";
 		};
